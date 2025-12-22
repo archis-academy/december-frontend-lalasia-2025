@@ -25,16 +25,27 @@ $font-regular: 400;
 
 /*
  * Screen Breakpoints
+$desktop-xl: 1920px;
+ $desktop-l: 1440px;
+ $desktop-m: 1200px;
+ $desktop-s: 1024px;
+ $tablet-l: 992px;
+ $tablet-m: 768px;
+ $tablet-s: 640px;
+ $mobile-l: 576px;
+ $mobile-m: 480px;
+ $mobile-s: 320px;
+
+
  * */
 
-$desktop-xxl: pxToRem(1920);
-$desktop-xl: pxToRem(1600);
-$desktop-l: pxToRem(1440);
-$desktop-m: pxToRem(1200);
-$desktop-s: pxToRem(1024);
-$tablet-l: pxToRem(992);
-$tablet-m: pxToRem(768);
-$tablet-s: pxToRem(640);
-$mobile-l: pxToRem(576);
-$mobile-m: pxTotRem(480);
-$mobile-s: pxToRem(320);
+ $desktop-xl: 1920px;
+ $desktop-l: 1440px;
+ $desktop-m: 1200px;
+ $desktop-s: 1024px;
+ $tablet-l: 992px;
+ $tablet-m: 768px;
+ $tablet-s: 640px;
+ $mobile-l: 576px;
+ $mobile-m: 480px;
+ $mobile-s: 320px;
