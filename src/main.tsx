@@ -11,20 +11,41 @@ import Products from "./pages/Product/Products";
 import ProductDetail from "./pages/ProductDetails/ProductDetail";
 import Services from "./pages/Services/Services";
 import SignUp from "./pages/SignUp/SignUp";
+import MainLayout from "./layouts/MainLayout/MainLayout";
+import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
+import AuthLayout from "./layouts/AuthLayout/AuthLayout";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/article" element={<Article />} />
+
+        {/* MainLayout begin */}
+        <Route path="/" element={<MainLayout />}>
+
+          <Route index element={<Home />} />
+          <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<ProductDetail />} />
+          <Route path="services" element={<Services />} />
+          <Route path="articles" element={<Article />} />
+          <Route path="articles/:id" element={<ArticleDetail />} />
+          <Route path="about-us" element={<AboutUs />} />
+
+        </Route>
+        {/* MainLayout end */}
+
+        {/* AuthLayout begin */}
+        <Route path="/auth" element={<AuthLayout />}>
+
+          <Route index path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
+
+        </Route>
+        {/* Authlayout end */}
+
+        {/* 404 Not Found */}
         <Route path="/*" element={<Error />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/sign-up" element={<SignUp />} />
+
       </Routes>
     </BrowserRouter>
   </StrictMode>,
