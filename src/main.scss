@@ -1,15 +1,1 @@
-@use "./styles/reset" as *;
-
-@use 'index' as *;
-
-h1 {
-  @include h1;
-}
-
-h5 {
-  @include h5;
-}
-
-p {
-  @include p3;
-}
+@use './styles/index' as *;

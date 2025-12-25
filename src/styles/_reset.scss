@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 *,
 *::before,
 *::after {
@@ -14,7 +16,7 @@
 
 body {
   line-height: 1.5;
-  font-family: "Inter", sans-serif;
+  font-family: $font-primary, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -59,20 +61,4 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
-}
-
-
-
-@use 'variables' as v;
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: v.$font-primary;
-  font-weight: v.$fw-regular;
 }
