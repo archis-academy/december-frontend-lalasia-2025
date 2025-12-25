@@ -60,3 +60,19 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+
+
+@use 'variables' as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: v.$font-primary;
+  font-weight: v.$fw-regular;
+}

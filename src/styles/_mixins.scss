@@ -9,3 +9,37 @@
     @content;
   }
 }
+
+@use 'variables' as v;
+
+/* Headings */
+
+@mixin h1 {
+  font-family: v.$font-primary;
+  font-size: v.$h1-size;
+  font-weight: v.$h1-weight;
+  line-height: v.$h1-line-height;
+}
+
+@mixin h3plus {
+  font-family: v.$font-primary;
+  font-size: v.$h3plus-size;
+  font-weight: v.$h3plus-weight;
+  line-height: v.$h3plus-line-height;
+}
+
+@mixin h5 {
+  font-family: v.$font-primary;
+  font-size: v.$h5-size;
+  font-weight: v.$h5-weight;
+  line-height: v.$h5-line-height;
+}
+
+/* Paragraphs */
+
+@mixin p3 {
+  font-family: v.$font-primary;
+  font-size: v.$p3-size;
+  font-weight: v.$p3-weight;
+  line-height: v.$p3-line-height;
+}

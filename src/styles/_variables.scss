@@ -2,50 +2,60 @@
 
 /*
  * Colors
- *
- * configure the colors required for the project here
- * */
+ */
 $white: #ffffff;
 $black: #000000;
+$paragraph-color: #AFADB5;
+$text-color: #151411;
+$main-color: #518581;
+$secondary-color: #FFB23F;
 
 /*
- * Typography and font sizes
- *
- * configure the typography and font sizes required for the project here
- * */
+ * Typography
+ */
 
-// font familly
-$primary-font: "Inter", sans-serif;
+// Font family
+$font-primary: 'Eudoxus Sans', system-ui, -apple-system, sans-serif;
 
-//font-sizes
+// Base font size
 $font-base: pxToRem(16);
 
-//font-weight
-$font-regular: 400;
+// Font weights
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+/* Headings / H1 - Bold - 64 */
+$h1-size: pxToRem(64);
+$h1-weight: $fw-bold;
+$h1-line-height: 1.1;
+
+/* Headings / H3+ - Bold - 26 */
+$h3plus-size: pxToRem(26);
+$h3plus-weight: $fw-bold;
+$h3plus-line-height: 1.3;
+
+/* Heading / H5 - Bold - 18 */
+$h5-size: pxToRem(18);
+$h5-weight: $fw-bold;
+$h5-line-height: 1.4;
+
+/* Paragraph / P3 - Medium - 18 */
+$p3-size: pxToRem(18);
+$p3-weight: $fw-medium;
+$p3-line-height: 1.6;
 
 /*
- * Screen Breakpoints
-$desktop-xl: 1920px;
- $desktop-l: 1440px;
- $desktop-m: 1200px;
- $desktop-s: 1024px;
- $tablet-l: 992px;
- $tablet-m: 768px;
- $tablet-s: 640px;
- $mobile-l: 576px;
- $mobile-m: 480px;
- $mobile-s: 320px;
-
-
- * */
-
- $desktop-xl: 1920px;
- $desktop-l: 1440px;
- $desktop-m: 1200px;
- $desktop-s: 1024px;
- $tablet-l: 992px;
- $tablet-m: 768px;
- $tablet-s: 640px;
- $mobile-l: 576px;
- $mobile-m: 480px;
- $mobile-s: 320px;
+ * Breakpoints
+ */
+$desktop-xxl: pxToRem(1920);
+$desktop-xl: pxToRem(1600);
+$desktop-l: pxToRem(1440);
+$desktop-m: pxToRem(1200);
+$desktop-s: pxToRem(1024);
+$tablet-l: pxToRem(992);
+$tablet-m: pxToRem(768);
+$tablet-s: pxToRem(640);
+$mobile-l: pxToRem(576);
+$mobile-m: pxToRem(480);
+$mobile-s: pxToRem(320);
