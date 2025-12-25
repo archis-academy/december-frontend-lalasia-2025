@@ -1,4 +1,22 @@
 .mainlayout {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+
+    header {
+        width: 100%;
+        height: 120px;
+    }
+
+    main {
+        flex: 1;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+        height: 290px;
+    }
 }
