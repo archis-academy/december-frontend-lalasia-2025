@@ -51,6 +51,34 @@ intermediate-react-template/
 > along with other configuration files
 ```
 
+
+## How can you use useData hook to get data
+
+  - Firstly, you should call useData hook
+  - useData hook requires one parameter "endpoint" to retrieve data
+    => You can use all endpoints to get data
+      - users
+        - articles
+        - customerSays
+      - products
+      - team
+      - slides
+  - useData will return 3 parameters: data, isLoading and error
+  - You can use one or all in returned paramaters
+  - You can find example in home.tsx file
+
+  - Example
+  ```
+  const {data, isLoading, error} = useData("products")
+
+  const {data} = useData("users/articles")
+
+  const {data, isLoading} = useData("slides")
+
+  ```
+
+
+
 ## References
 
 - [React Router](https://reactrouter.com/)
