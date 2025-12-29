@@ -14,8 +14,6 @@ import SignUp from "./pages/SignUp/SignUp";
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
 import AuthLayout from "./layouts/AuthLayout/AuthLayout";
-import Benefits from './pages/sections/Benefits';
-
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -32,7 +30,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="articles" element={<Article />} />
           <Route path="articles/:id" element={<ArticleDetail />} />
           <Route path="about-us" element={<AboutUs />} />
-          <Route path="benefits" element={<Benefits/>} />
+          
 
         </Route>
         {/* MainLayout end */}
