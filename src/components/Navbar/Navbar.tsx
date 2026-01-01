@@ -1,4 +1,6 @@
 import React from 'react'
+import { RiUserLine } from "react-icons/ri";
+import { BsHandbag } from "react-icons/bs";
 import styles from './Navbar.module.scss';
 
 
@@ -17,14 +19,15 @@ const Navbar: React.FC = () => {
          <a href="#" >Article</a>
          <a href="#" >About Us</a>
            </div>
-          <div className={styles.buttonArea}>
-                <button className={styles.navButtonBag}>
-                    
-                <button className={styles.navButtonUse}>
-                  
-                    </button>  
-                </button>
-            </div>
+           <div className={styles.icon}>
+       
+      <button className={styles.iconButton}>
+        <BsHandbag size={20} />
+      </button> 
+      <button className={styles.iconButton}>
+        <RiUserLine size={20} />
+      </button>
+    </div>
         </header>
     );
 };

@@ -1,46 +1,42 @@
 @use "/src/styles/variables" as *;
 @use "/src/styles/functions" as *;
 @use "/src/styles/mixins" as *;
-
-.navbarSection{
-    background-color: $white;
+.navbarSection {
+  background-color: $white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: $black;
+  .logoArea {
     display: flex;
-    justify-content: flex-start;
+    gap: 12px;
     align-items: center;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
-    color:$black;
-    
-  .logoArea{
-    display: flex;
-    gap:12px;
-    align-items: center;
-   margin-left: 100px;
+    margin-left: 100px;
     margin-right: 260px;
-    .logoBrand{
-     font-size:20px;
-     font-weight: 700;
-     color:$text-color;
-
+    .logoBrand {
+      font-size: 20px;
+      font-weight: 700;
+      color: $text-color;
     }
   }
-  .linkArea{
+  .linkArea {
     display: flex;
-    gap:60px;
-    
-    a{
-     color:$text-color;
-     font-weight: 500px;
-     font-size:18px;
-     text-decoration: none;
+    gap: 60px;
+    a {
+      color: $text-color;
+      font-weight: 500px;
+      font-size: 18px;
+      text-decoration: none;
     }
   }
-  .navButtonBag{
-     width: 30px;
-     height: 30px;
-     position: absolute;
-     top: 45px;
-     left: 1256px;
-     background: transparent;
-    
-}
+  .iconButton {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  .icon {
+    display: flex;
+    gap: 20px;
+  }
 }
