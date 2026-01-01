@@ -8,6 +8,13 @@
   flex-direction: column;
   gap: pxToRem(32);
   font-family: $font-primary;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
 
   .sectionSubtitle {
     $h5-size: pxToRem(18);
@@ -52,7 +59,59 @@
   }
 }
 
-//oklari Navigation özellestirmek
+.swiperContainer {
+  position: relative;
+}
+.navButtonsWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 60%; // Slider'ın ortasına gelsin diye göz kararı (kart yüksekliğine göre ayarla)
+  left: 0;
+  z-index: 10;
+  pointer-events: none; // Tıklamalar alttaki karta geçsin, sadece butonlar tıklanabilir olsun
+  padding: 0 5%; // Kenarlardan biraz içeride dursunlar
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.customPrevBtn,
+.customNextBtn {
+  pointer-events: auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: rgba(21, 20, 17, 0.6);
+  backdrop-filter: blur(15px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: $white;
+  border: none !important;
+  svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background-color: $main-color; // Yeşil renk
+    color: $white;
+    transform: scale(1.1); // Hafif büyüme efekti
+  }
+
+  // Tıklandığında (Active) basılma hissi
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
 :global {
   .swiper-button-next,
   .swiper-button-prev {
