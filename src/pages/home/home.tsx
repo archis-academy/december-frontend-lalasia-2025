@@ -6,7 +6,6 @@ import { use } from "react";
 
 function Home() {
 
-
   const { data } = useData({ endpoint: "products" });
 
 
