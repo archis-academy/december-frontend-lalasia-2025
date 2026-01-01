@@ -5,17 +5,17 @@
  */
 $white: #ffffff;
 $black: #000000;
-$paragraph-color: #AFADB5;
+$paragraph-color: #afadb5;
 $text-color: #151411;
 $main-color: #518581;
-$secondary-color: #FFB23F;
+$secondary-color: #ffb23f;
 
 /*
  * Typography
  */
 
 // Font family
-$font-primary: 'Eudoxus Sans', system-ui, -apple-system, sans-serif;
+$font-primary: "Eudoxus Sans", system-ui, -apple-system, sans-serif;
 
 // Base font size
 $font-base: pxToRem(16);
@@ -29,6 +29,11 @@ $fw-bold: 700;
 $h1-size: pxToRem(64);
 $h1-weight: $fw-bold;
 $h1-line-height: 1.1;
+
+/* Headings / H2 - Bold - 44 */
+$h2-size: pxToRem(44);
+$h2-weight: $fw-bold;
+$h2-line-height: 1.1;
 
 /* Headings / H3+ - Bold - 26 */
 $h3plus-size: pxToRem(26);
