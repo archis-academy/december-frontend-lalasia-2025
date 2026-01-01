@@ -1,0 +1,97 @@
+@use "@styles/_variables.scss" as *;
+@use "@styles/_functions.scss" as *;
+
+.ourPopularProductSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: pxToRem(32);
+  font-family: $font-primary;
+
+  .sectionSubtitle {
+    $h5-size: pxToRem(18);
+    $h5-weight: $fw-bold;
+    $h5-line-height: 1.4;
+    color: $secondary-color;
+  }
+
+  .sectionTitle {
+    font-size: $h2-size;
+    font-weight: $h2-weight;
+    line-height: $h2-line-height;
+    color: $text-color;
+    text-align: center;
+    max-width: pxToRem(600);
+  }
+
+  .sectionDescription {
+    font-size: $p3-size;
+    font-weight: $p3-weight;
+    line-height: $p3-line-height;
+    color: $paragraph-color;
+    text-align: center;
+  }
+
+  .swiperWrapper {
+    padding: 1rem 1rem 3rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .cardInner {
+    height: 350px;
+    background-color: rgb(214, 212, 212);
+    border: 2px dashed gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: pxToRem(24);
+    color: $text-color;
+  }
+}
+
+//oklari Navigation özellestirmek
+:global {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $text-color;
+    width: pxToRem(44);
+    height: pxToRem(44);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: pxToRem(20);
+    font-weight: $fw-bold;
+  }
+
+  .swiper-button-next {
+    right: pxToRem(8);
+  }
+
+  .swiper-button-prev {
+    left: pxToRem(8);
+  }
+}
+.card {
+  width: 200px; // istediğin kart genişliği
+  height: 350px; // isteğe göre
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardInner {
+  background: #f5f5f5;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

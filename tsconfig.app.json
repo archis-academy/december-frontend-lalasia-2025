@@ -33,8 +33,12 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@images/*": ["src/assets/images/*"],
-      "@icons/*": ["src/assets/icons/*"]
-    }
+      "@icons/*": ["src/assets/icons/*"],
+      "@sections/*": ["src/sections/*"]
+    },
+
+    /* TypeScript 6 → 7 geçiş uyarısını susturur */
+    "ignoreDeprecations": "6.0"
   },
   "include": ["src"]
 }
