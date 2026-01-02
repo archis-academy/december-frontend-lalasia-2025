@@ -1,5 +1,5 @@
 import Welcome from "@components/welcome/welcome";
-import OurPopularProductSection from "@sections/OurPopularProductSection/OurPopularProductSection";
+import OurPopularProductSection from "@popular/OurPopularProductSection";
 
 function Home() {
   return (

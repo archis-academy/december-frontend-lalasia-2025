@@ -9,10 +9,10 @@ export const ArrowLeftIcon = () => (
     <path
       d="M15.0898 19.92L8.56984 13.4C7.79984 12.63 7.79984 11.37 8.56984 10.6L15.0898 4.08"
       stroke="currentColor"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -28,10 +28,10 @@ export const ArrowRightIcon = () => (
     <path
       d="M8.91016 19.92L15.4302 13.4C16.2002 12.63 16.2002 11.37 15.4302 10.6L8.91016 4.08"
       stroke="currentColor"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

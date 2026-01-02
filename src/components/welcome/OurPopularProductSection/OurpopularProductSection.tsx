@@ -1,4 +1,5 @@
-import styles from "./OurPopularProductSection.module.scss";
+import styles from "@popular/OurPopularProductSection.module.scss";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // CSS
@@ -8,24 +9,22 @@ import "swiper/css/pagination";
 
 // Modüller
 import { Navigation, Pagination } from "swiper/modules";
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-} from "../../../public/icons/OurProductSection/icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "@popular/ourpopularIcons";
 
 import { useRef } from "react";
 
 const OurPopularProductSection = () => {
   const blankCards = [1, 2, 3, 4, 5, 6, 7, 8];
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
 
   return (
     <section className={styles.ourPopularProductSection}>
       <h5 className={styles.sectionSubtitle}>Product</h5>
       <h2 className={styles.sectionTitle}>Our popular product</h2>
       <p className={styles.sectionDescription}>
-        Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim{" "}
+        Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim
         <br />
         placerat nisi, adipiscing mauris non purus parturient.
       </p>
@@ -33,16 +32,17 @@ const OurPopularProductSection = () => {
       <Swiper
         modules={[Navigation, Pagination]}
         centeredSlides={true}
-        loop
+        loop={true}
         spaceBetween={30}
         className={styles.swiperWrapper}
         onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
+          if (
+            typeof swiper.params.navigation !== "boolean" &&
+            swiper.params.navigation
+          ) {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }
         }}
         breakpoints={{
           320: {
@@ -66,15 +66,17 @@ const OurPopularProductSection = () => {
             </div>
           </SwiperSlide>
         ))}
+
+        {/* Navigation butonları Swiper’ın içinde  */}
+        <div className={styles.navButtonsWrapper}>
+          <button ref={prevRef} className={styles.customPrevBtn}>
+            <ArrowLeftIcon />
+          </button>
+          <button ref={nextRef} className={styles.customNextBtn}>
+            <ArrowRightIcon />
+          </button>
+        </div>
       </Swiper>
-      <div className={styles.navButtonsWrapper}>
-        <button ref={prevRef} className={styles.customPrevBtn}>
-          <ArrowLeftIcon />
-        </button>
-        <button ref={nextRef} className={styles.customNextBtn}>
-          <ArrowRightIcon />
-        </button>
-      </div>
     </section>
   );
 };
