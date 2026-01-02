@@ -4,16 +4,17 @@
 .navbarSection {
   background-color: $white;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
   color: $black;
+  margin: auto;
+  max-width: 1440px;
   .logoArea {
     display: flex;
     gap: 12px;
     align-items: center;
-    margin-left: 100px;
-    margin-right: 260px;
+
     .logoBrand {
       font-size: 20px;
       font-weight: 700;
