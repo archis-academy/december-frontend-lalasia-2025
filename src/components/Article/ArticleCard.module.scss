@@ -54,6 +54,7 @@
         letter-spacing: 0;
         font-size: clamp(16px, calc((24/1240) * 100vw), 24px);
         color: $text-color;
+        text-wrap-mode: wrap;
     }
 
     &Description {
