@@ -1,18 +1,13 @@
-"use server"
 
-import { useData } from "@/hooks/useData";
 import Welcome from "@components/welcome/welcome";
-import { use } from "react";
+import TestimonialCard from "@/components/TestimonialCard/TestimonialCard";
 
 function Home() {
-
-  const { data } = useData({ endpoint: "products" });
-
-
-  console.log(data);
-
-
-  return <div>Home page</div>;
+return (
+    <div>
+      <TestimonialCard />
+    </div>
+  );
 }
 
 export default Home;
