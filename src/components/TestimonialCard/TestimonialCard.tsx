@@ -1,7 +1,9 @@
+
 import styles from "./TestimonialCard.module.scss";
 
 const TestimonialCard = () => {
   return (
+    <div className={styles.testimonial}>
     <div className={styles.testimonialCard}>
       <span className={styles.quote}>“</span>
 
@@ -29,6 +31,7 @@ const TestimonialCard = () => {
           <span className={styles.score}>4.3</span>
         </div>
       </div>
+    </div>
     </div>
   );
 };
