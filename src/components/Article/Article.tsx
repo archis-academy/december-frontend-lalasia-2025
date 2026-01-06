@@ -2,9 +2,18 @@ import styles from "./Article.module.scss";
 import ArticleCard from "./ArticleCard";
 import CustomButton from "../CustomButton/CustomButton";
 import Arrow from "../Arrow/Arrow";
-import { articleCards } from "@/constants/constants";
+// import { articleCards } from "@/constants/constants";
+import { useData } from "@/hooks/useData";
 
 export default function Article() {
+    const { data, isLoading } = useData({ endpoint: "users/3/articles" });
+    const articleCards = data as any[];
+    console.log('Article Cards: ', articleCards);
+
+    if (isLoading)
+        return <div>Loading...</div>
+
+
     return (
 
         <section className={styles.article}>

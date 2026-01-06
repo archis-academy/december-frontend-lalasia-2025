@@ -46,6 +46,8 @@
         display: flex;
         flex-direction: column;
         gap: pxToRem(14);
+        max-width: 329px;
+        width: 329px;
     }
 
     &Title {
@@ -148,6 +150,8 @@
 
 @include max($mobile-s) {
     .articleCard {
+        flex-direction: column;
+
         &ImageWrapper {
             width: 100%;
             height: 100%;

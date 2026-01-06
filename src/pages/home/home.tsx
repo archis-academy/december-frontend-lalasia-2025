@@ -7,12 +7,6 @@ import Article from "@/components/Article/Article";
 
 function Home() {
 
-  const { data } = useData({ endpoint: "products" });
-
-
-  console.log(data);
-
-
   return <div>
     Home page
     <Article />
