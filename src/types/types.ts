@@ -8,3 +8,12 @@ export type ArticleCardProps = {
     description: string,
 }
 
+export type Products = {
+  id: string;
+  title: string;
+  subTitle: string;
+  desc: string;
+  image: string;
+  price: number;
+};
+
