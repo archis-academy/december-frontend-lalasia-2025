@@ -1,18 +1,12 @@
-"use server"
+"use client";
 
-import { useData } from "@/hooks/useData";
-import Welcome from "@components/welcome/welcome";
-import { use } from "react";
+import ProductList from "@/components/ProductList/ProductList";
 
 function Home() {
 
-  const { data } = useData({ endpoint: "products" });
-
-
-  console.log(data);
-
-
-  return <div>Home page</div>;
+  return <div>
+    <ProductList/>
+  </div>;
 }
 
 export default Home;
