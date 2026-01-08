@@ -1,0 +1,43 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/functions" as *;
+@use "/src/styles/mixins" as *;
+.navbarSection {
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: $black;
+  margin: auto;
+  max-width: 1440px;
+  .logoArea {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    .logoBrand {
+      font-size: 20px;
+      font-weight: 700;
+      color: $text-color;
+    }
+  }
+  .linkArea {
+    display: flex;
+    gap: 60px;
+    a {
+      color: $text-color;
+      font-weight: 500px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+  }
+  .iconButton {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  .icon {
+    display: flex;
+    gap: 20px;
+  }
+}
