@@ -1,10 +1,10 @@
 export type ArticleCardProps = {
-    createdAt: string,
+    imagePath: string,
+    avatarPath: string,
     title: string,
+    description: string,
     category: string,
-    image: string,
-    subTitle: string,
-    userId: string,
-    context: string,
+    authorName: string,
+    date: string
 }
 

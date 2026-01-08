@@ -2,19 +2,13 @@ import styles from "./ArticleCard.module.scss";
 import { type ArticleCardProps } from '@/types/types';
 
 export default function ArticleCard({
-    // imagePath,
-    // avatarPath,
-    // title,
-    // description,
-    // category,
-    // authorName,
-    // date
-    category,
-    context,
-    createdAt,
-    image,
-    subTitle,
+    imagePath,
+    avatarPath,
     title,
+    description,
+    category,
+    authorName,
+    date
 
 }: ArticleCardProps) {
 
@@ -22,7 +16,7 @@ export default function ArticleCard({
         <div className={styles.articleCard}>
 
             <div className={styles.articleCardImageWrapper}>
-                <img src={image} alt='image' />
+                <img src={imagePath} alt='image' />
             </div>
 
             <div className={styles.articleCardContent}>
@@ -32,16 +26,16 @@ export default function ArticleCard({
 
                     <div className={styles.articleCardTitleWrapper}>
                         <h3 className={styles.articleCardTitle}>{title}</h3>
-                        <p className={styles.articleCardDescription}>{subTitle}</p>
+                        <p className={styles.articleCardDescription}>{description}</p>
                     </div>
                 </div>
 
                 <div className={styles.articleCardBottom}>
                     <p className={styles.articleCardAuthor}>
-                        <img src={'avatarPath'} alt="author-1" />
-                        <span className={styles.articleCardAuthorName}>{'authorName'}</span>
+                        <img src={avatarPath} alt="author-1" />
+                        <span className={styles.articleCardAuthorName}>{authorName}</span>
                     </p>
-                    <span className={styles.articleCardBottomDate}>{createdAt}</span>
+                    <span className={styles.articleCardBottomDate}>{date}</span>
                 </div>
 
             </div>

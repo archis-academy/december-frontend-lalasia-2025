@@ -2,43 +2,34 @@ import styles from "./Article.module.scss";
 import ArticleCard from "./ArticleCard";
 import CustomButton from "../CustomButton/CustomButton";
 import Arrow from "../Arrow/Arrow";
-// import { articleCards } from "@/constants/constants";
+import { articleCards } from "@/constants/constants";
 import { useData } from "@/hooks/useData";
 
 export default function Article() {
-    const { data, isLoading } = useData({ endpoint: "users/3/articles" });
-    const articleCards = data as any[];
-    console.log('Article Cards: ', articleCards);
 
-    if (isLoading)
-        return <div>Loading...</div>
+    // const { data, isLoading } = useData({ endpoint: "users/3/articles" });
+    // const articleCards = data as any[];
+    // console.log('Article Cards: ', articleCards);
+
+    // if (isLoading)
+    //     return <div>Loading...</div>
 
 
     return (
 
         <section className={styles.article}>
 
-            {/* left content */}
             <div className={styles.leftContent}>
-
-                {/* first child */}
                 <div className={styles.leftContentHeader}>
                     <h5 className={styles.sectionTitle}>Articles</h5>
                     <h2 className={styles.leftContentTitle}>
                         The best furniture comes from Lalasia
                     </h2>
                 </div>
-
-                {/* second child */}
                 <p className={styles.leftContentText}>Pellentesque etiam blandit in tincidunt at donec. </p>
-
-                {/* thirth child */}
                 <div className={styles.imageWrapper}>
-                    {/* image */}
                     <div className={styles.imageShadow}></div>
                     <img className={styles.leftContentImage} src="/images/left-content-image.jpg" alt="image-1" />
-
-                    {/* image text */}
                     <div className={styles.imageTextWrapper}>
                         <span className={styles.categoryText}>Tips and Trick</span>
                         <div className={styles.imageDescriptionWrapper}>
@@ -58,7 +49,6 @@ export default function Article() {
                         </div>
                     </div>
 
-                    {/* direction buttons */}
                     <div className={styles.directionButtons}>
                         <CustomButton className={styles.directionBtn}>
                             <Arrow />
