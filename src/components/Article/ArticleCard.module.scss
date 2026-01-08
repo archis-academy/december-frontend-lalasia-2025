@@ -10,10 +10,10 @@
     align-items: center;
 
     &ImageWrapper {
-        height: 260px;
-        width: 260px;
+        flex: 0 0 clamp(110px, 25vw, 260px);
+        height: clamp(110px, 25vw, 260px);
 
-        img {
+        .image {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -121,12 +121,6 @@
         &Top {
             gap: pxToRem(4);
         }
-
-        &ImageWrapper {
-            width: 110px;
-            height: 110px;
-        }
-
 
         &Description {
             display: none;

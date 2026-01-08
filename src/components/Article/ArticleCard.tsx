@@ -16,7 +16,7 @@ export default function ArticleCard({
         <div className={styles.articleCard}>
 
             <div className={styles.articleCardImageWrapper}>
-                <img src={imagePath} alt='image' />
+                <img className={styles.image} src={imagePath} alt='image' />
             </div>
 
             <div className={styles.articleCardContent}>
