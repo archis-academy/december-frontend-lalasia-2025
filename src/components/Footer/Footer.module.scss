@@ -1,0 +1,158 @@
+@use "@styles/_variables.scss" as *;
+@use "@styles/_functions.scss" as *;
+
+.footer {
+  //padding: 40px 20px;
+  font-family: $font-primary;
+
+  /* ---------------------- TOP BANNER ---------------------- */
+  .topBanner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 44px);
+      font-family: $font-primary;
+    }
+
+    .ctaButton {
+      background-color: $main-color;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: $font-primary;
+
+      .arrow {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  /* ---------------------- COLUMNS ---------------------- */
+  .columns {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    margin-top: 30px;
+    justify-content: flex-start; /* spacer’ın sağa yapışmasını sağlar */
+  }
+
+  /* SOL TARAF */
+  .logoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .logoRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* SAĞ TARAF — ÜÇ KOLON */
+  .spacer {
+    margin-left: auto; /* sağa yaslama */
+    display: flex;
+
+    gap: 70px;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: clamp(18px, 3vw, 25px);
+    margin-bottom: 10px;
+    font-family: $font-primary;
+  }
+
+  p {
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-family: $font-primary;
+    color: #151411;
+  }
+}
+
+/* ---------------------- COLUMN COMPONENT ---------------------- */
+.column {
+  flex: 1 1 150px;
+
+  h4 {
+    font-size: clamp(18px, 2.5vw, 20px);
+    margin-bottom: 10px;
+    font-family: $font-primary;
+    color: #151411;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: #444; /* son tanım geçerli */
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+}
+
+/*  SADECE PRODUCT ALTINDAKİ MADDELER YAN YANA */
+.productColumn ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.productColumn ul li {
+  white-space: nowrap;
+}
+/* ---------------------- RESPONSIVE ---------------------- */
+
+/* 📱 Mobil (max 768px) */
+@media (max-width: 768px) {
+  .topBanner {
+    display: flex;
+    flex-direction: column; /* başlık üstte, buton altında */
+    align-items: flex-start;
+    text-align: left;
+    gap: 15px;
+    margin-left: 20px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .ctaButton {
+      align-self: flex-start;
+      margin-top: 10px; /* başlığın altına boşluk */
+    }
+
+    .logoRow {
+      flex-direction: column; /* ikon üstte, Lalasia altta */
+      gap: 6px;
+    }
+  }
+
+  .columns {
+    flex-direction: column; /* Product – Services – Follow Us alt alta */
+    gap: 10px;
+    margin-left: 20px;
+  }
+}
+
+/* 📱 Küçük mobil (max 480px) */
+@media (max-width: 480px) {
+  .ctaButton {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%; /* küçük mobilde de tam genişlik */
+    margin-top: 8px; /* başlığın altına boşluk */
+  }
+}
