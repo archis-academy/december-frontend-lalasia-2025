@@ -144,5 +144,11 @@
 @include max($mobile-s) {
     .articleCard {
         flex-direction: column;
+
+        &ImageWrapper {
+            height: 100%;
+            width: 100%;
+        }
+
     }
 }

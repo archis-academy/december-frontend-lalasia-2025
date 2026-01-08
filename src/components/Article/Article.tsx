@@ -3,7 +3,7 @@ import ArticleCard from "./ArticleCard";
 import CustomButton from "../CustomButton/CustomButton";
 import Arrow from "../Arrow/Arrow";
 import { articleCards } from "@/constants/constants";
-import { useData } from "@/hooks/useData";
+// import { useData } from "@/hooks/useData";
 
 export default function Article() {
 
