@@ -2,93 +2,111 @@
 @use "@styles/_functions.scss" as *;
 
 .footer {
-  //padding: 40px 20px;
+  padding: 60px 20px;
   font-family: $font-primary;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  //background-color: rgb(91, 91, 182);
+}
 
-  /* ---------------------- TOP BANNER ---------------------- */
-  .topBanner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    width: 100%;
-
-    h2 {
-      margin: 0;
-      font-size: clamp(30px, 5vw, 44px);
-      font-family: $font-primary;
-    }
-
-    .ctaButton {
-      background-color: $main-color;
-      color: #fff;
-      padding: 15px 30px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      font-family: $font-primary;
-
-      .arrow {
-        margin-left: 8px;
-      }
-    }
-  }
-
-  /* ---------------------- COLUMNS ---------------------- */
-  .columns {
-    display: flex;
-    width: 100%;
-    gap: 40px;
-    margin-top: 30px;
-    justify-content: flex-start; /* spacer’ın sağa yapışmasını sağlar */
-  }
-
-  /* SOL TARAF */
-  .logoSection {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
-  }
-
-  .logoRow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  /* SAĞ TARAF — ÜÇ KOLON */
-  .spacer {
-    margin-left: auto; /* sağa yaslama */
-    display: flex;
-
-    gap: 70px;
-    margin-top: 20px;
-  }
+/* ---------------------- TOP BANNER ---------------------- */
+.topBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 
   h2 {
-    font-size: clamp(18px, 3vw, 25px);
-    margin-bottom: 10px;
+    margin: 0;
+    font-size: clamp(30px, 5vw, 44px);
     font-family: $font-primary;
   }
 
-  p {
-    font-size: clamp(14px, 2.5vw, 18px);
+  .ctaButton {
+    background-color: $main-color;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
     font-family: $font-primary;
-    color: #151411;
+
+    .arrow {
+      margin-left: 8px;
+    }
   }
 }
 
-/* ---------------------- COLUMN COMPONENT ---------------------- */
-.column {
-  flex: 1 1 150px;
+/* ---------------------- DIVIDER ---------------------- */
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #ece4de;
+  margin: 20px auto;
+}
 
-  h4 {
-    font-size: clamp(18px, 2.5vw, 20px);
-    margin-bottom: 10px;
-    font-family: $font-primary;
-    color: #151411;
-  }
+/* ---------------------- BOTTOM SECTION ---------------------- */
+.bottomSection {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+
+  width: 100%;
+  //justify-content: space-between; /* sol blok ve sağ blok ayrılır */
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.leftBlock {
+  flex: 0 0 auto; /* logo solda sabit */
+}
+
+.logoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.paragraf {
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: #151411;
+}
+
+/* Sağ blok */
+.rightBlock {
+  justify-self: end;
+}
+
+.spacer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* yazılar sola hizalı */
+  //flex: 0 0 auto; /* kolonlar büyümesin */
+  //padding: 0;
+  //margin: 0;
+  margin-right: 40px;
+}
+.column:last-child {
+  margin-right: 0;
+}
+h4 {
+  font-size: clamp(18px, 2.5vw, 20px);
+  margin-bottom: 10px;
+  font-family: $font-primary;
+  color: #151411;
 }
 
 ul {
@@ -97,15 +115,14 @@ ul {
 
   li {
     font-size: clamp(14px, 2.5vw, 18px);
-    color: #444; /* son tanım geçerli */
+    color: #444;
     margin-bottom: 6px;
     cursor: pointer;
   }
 }
 
-/*  SADECE PRODUCT ALTINDAKİ MADDELER YAN YANA */
 .productColumn ul {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -113,46 +130,64 @@ ul {
 .productColumn ul li {
   white-space: nowrap;
 }
-/* ---------------------- RESPONSIVE ---------------------- */
 
-/* 📱 Mobil (max 768px) */
+/* ---------------------- RESPONSIVE ---------------------- */
 @media (max-width: 768px) {
   .topBanner {
-    display: flex;
-    flex-direction: column; /* başlık üstte, buton altında */
+    flex-direction: column;
     align-items: flex-start;
-    text-align: left;
-    gap: 15px;
-    margin-left: 20px;
+    gap: 16px;
 
     h2 {
-      margin-bottom: 10px;
+      text-align: left;
+      font-size: clamp(24px, 6vw, 32px);
     }
 
     .ctaButton {
       align-self: flex-start;
-      margin-top: 10px; /* başlığın altına boşluk */
-    }
-
-    .logoRow {
-      flex-direction: column; /* ikon üstte, Lalasia altta */
-      gap: 6px;
     }
   }
 
-  .columns {
-    flex-direction: column; /* Product – Services – Follow Us alt alta */
-    gap: 10px;
-    margin-left: 20px;
+  .divider {
+    margin: 20px 0;
   }
-}
 
-/* 📱 Küçük mobil (max 480px) */
-@media (max-width: 480px) {
-  .ctaButton {
-    padding: 12px 20px;
-    font-size: 14px;
-    width: 100%; /* küçük mobilde de tam genişlik */
-    margin-top: 8px; /* başlığın altına boşluk */
+  .logoSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-left: 0;
+  }
+  .logoRow {
+    display: flex;
+    flex-direction: row; /* logo + başlık yan yana */
+    align-items: center;
+    gap: 12px;
+  }
+  .paragraf {
+    text-align: left; /* sola hizalı */
+  }
+
+  .bottomColumns {
+    display: flex;
+    justify-content: center; /* ortala */
+    margin-top: 20px;
+  }
+
+  .spacer {
+    display: flex;
+    flex-direction: row; /* yan yana */
+    justify-content: flex-start; /* ortalı */
+    gap: 20px;
+    flex-wrap: nowrap; /* üçü aynı satırda */
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .column {
+    flex: 0 0 auto;
+    align-items: flex-start;
+    text-align: left;
   }
 }

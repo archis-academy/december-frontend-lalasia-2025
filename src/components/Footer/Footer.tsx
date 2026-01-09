@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 import FooterColumn from "./FooterColumn";
-import { FooterIcon, FooterLine } from "./FooterIcon";
 
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
+      {/* Üst banner */}
       <div className={styles.topBanner}>
         <h2>Join with me to get special discount</h2>
         <button className={styles.ctaButton}>
@@ -13,22 +13,23 @@ const Footer: React.FC = () => {
         </button>
       </div>
 
-      <FooterLine />
+      {/* Çizgi */}
+      <div className={styles.divider}></div>
 
-      <div className={styles.columns}>
-        {/* SOL TARAF */}
-        <div className={styles.logoSection}>
-          <div className={styles.logoRow}>
-            <FooterIcon />
-            <h2>Lalasia</h2>
-          </div>
-          <p>
-            Lalasia is digital agency that help you make better <br />
-            experience iaculis cras in.
-          </p>
+      {/* Logo + paragraf */}
+      <div className={styles.logoSection}>
+        <div className={styles.logoRow}>
+          <img src="/images/Lalasia.png" alt="Lalasia Logo" />
+          <h2>Lalasia</h2>
         </div>
+        <p className={styles.paragraf}>
+          Lalasia is digital agency that help you make better <br />
+          experience iaculis cras in.
+        </p>
+      </div>
 
-        {/* SAĞ TARAF — ÜÇ KOLON BURADA OLMALI */}
+      {/* En alttaki üçlü blok */}
+      <div className={styles.bottomColumns}>
         <div className={styles.spacer}>
           <div className={`${styles.column} ${styles.productColumn}`}>
             <FooterColumn
@@ -41,14 +42,12 @@ const Footer: React.FC = () => {
               ]}
             />
           </div>
-
           <div className={styles.column}>
             <FooterColumn
               title="Services"
               items={["Catalog", "Blog", "FAQ", "Pricing"]}
             />
           </div>
-
           <div className={styles.column}>
             <FooterColumn
               title="Follow Us"
