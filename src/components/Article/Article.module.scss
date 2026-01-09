@@ -6,9 +6,47 @@
     margin-inline: auto;
     font-family: $font-primary;
     max-width: $container-max-width;
+    margin-block: 20px;
 }
 
 .swiper {
+    position: relative;
+
+    .articleTitleWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: pxToRem(14);
+        max-width: 544px;
+        position: absolute;
+        // top: -30px;
+        margin-top: -30px;
+        z-index: 100;
+    }
+
+    .sectionTitle {
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0;
+        color: $secondary-color;
+        font-size: clamp(14px, calc((18/1240)*100vw), 18px);
+    }
+
+    .mainTitle {
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0;
+        color: $text-color;
+        font-size: clamp(24px, calc((44/1240)*100vw), 44px);
+    }
+
+    .textContent {
+        font-weight: 500;
+        line-height: 1.8;
+        letter-spacing: 0;
+        color: $paragraph-color;
+        font-size: clamp(14px, calc((18/1240)*100vw), 18px);
+
+    }
 
     .swiperWrapper {
         position: relative;

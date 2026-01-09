@@ -12,13 +12,11 @@ export default function Article() {
     const [slideItems, setSlideItems] = useState<ArticleCardProps[]>([]);
     const { data, isLoading } = useData<ArticleCardProps[]>({ endpoint: "articles" });
     const { data: users } = useData<User[]>({ endpoint: "users" });
-    console.log(users);
 
     useEffect(() => {
         setSlideItems(data || []);
     }, [data]);
 
-    console.log(slideItems);
     const handleNext = () => {
 
         setSlideItems((prev) => {
@@ -50,10 +48,10 @@ export default function Article() {
 
                 <div className={styles.articleTitleWrapper}>
                     <h5 className={styles.sectionTitle}>Articles</h5>
-                    <h2 className={styles.leftContentTitle}>
+                    <h2 className={styles.mainTitle}>
                         The best furniture comes from Lalasia
                     </h2>
-                    <p className={styles.leftContentText}>Pellentesque etiam blandit in tincidunt at donec. </p>
+                    <p className={styles.textContent}>Pellentesque etiam blandit in tincidunt at donec. </p>
                 </div>
 
                 <div className={`${styles.swiperWrapper}`}>
