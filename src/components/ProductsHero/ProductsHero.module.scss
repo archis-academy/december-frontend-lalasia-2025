@@ -1,0 +1,161 @@
+@use "../../styles/variables" as *;
+.container {
+  .overlay {
+    text-align: center;
+    display: grid;
+    gap: 15px;
+
+    .overlayTitle {
+      color: $text-color;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 130%;
+      @media (max-width: $tablet-m) {
+        font-size: 26px;
+        line-height: 130%;
+      }
+    }
+    .overlayDescription {
+      color: $paragraph-color;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 180%;
+      max-width: 600px;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      @media (max-width: $tablet-m) {
+        font-size: 14px;
+        line-height: 180%;
+      }
+    }
+  }
+
+  .productsHero {
+    position: relative;
+    width: 100% !important;
+    max-width: 1440px;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        360deg,
+        #151411 -21.38%,
+        rgba(21, 20, 17, 0) 66.65%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heroContent {
+      position: absolute;
+      display: grid;
+      z-index: 2;
+      gap: 15px;
+      top: 25%;
+      left: 10%;
+      @media (max-width: $tablet-m) {
+        gap: 8px;
+      }
+      .discountBadge {
+        background-color: $main-color;
+        width: fit-content;
+        padding: 8px 16px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        color: $white;
+        @media (max-width: $tablet-m) {
+          padding: 6px 10px;
+        }
+        .discountBadgeText {
+          font-size: 14px;
+          line-height: 1.8;
+          font-weight: 500;
+          @media (max-width: $tablet-m) {
+            font-size: 10px;
+          }
+        }
+      }
+      .textContent {
+        display: grid;
+        gap: 20px;
+        @media (max-width: $tablet-m) {
+          max-width: 204px;
+          gap: 5px;
+        }
+        .heroTitle {
+          color: $white;
+          font-weight: 700;
+          font-size: 44px;
+          line-height: 130%;
+          @media (max-width: $tablet-m) {
+            font-size: 16px;
+            line-height: 1.45;
+          }
+        }
+        .heroDescription {
+          opacity: 0.8;
+          color: $white;
+          font-weight: bold;
+          font-size: 24px;
+          max-width: 416px;
+          @media (max-width: $tablet-m) {
+            font-size: 12px;
+            line-height: 1.8;
+          }
+        }
+      }
+    }
+
+    .imageWrapper {
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      object-fit: cover;
+      position: relative;
+      @media (max-width: $tablet-m) {
+        height: 180px;
+      }
+    }
+    :global(.swiper-button-next),
+    :global(.swiper-button-prev) {
+      width: 52px;
+      height: 52px;
+      background-color: $black;
+      opacity: 0.4;
+      border-radius: 50%;
+      color: $white;
+      transition: all 0.3s ease;
+      svg {
+        width: 10px;
+      }
+    }
+    :global(.swiper-button-next:hover),
+    :global(.swiper-button-prev:hover) {
+      background-color: $black;
+      opacity: 0.7;
+    }
+
+    :global(.swiper-button-next::after),
+    :global(.swiper-button-prev::after) {
+      font-size: 10px;
+      font-weight: bold;
+    }
+    :global(.swiper-pagination-bullet) {
+      background-color: $white; // pasif renk
+      opacity: 0.4;
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+      background-color: $white; // aktif renk
+      opacity: 1;
+    }
+    @media (max-width: $tablet-m) {
+      :global(.swiper-button-next),
+      :global(.swiper-button-prev) {
+        display: none;
+      }
+    }
+  }
+}
