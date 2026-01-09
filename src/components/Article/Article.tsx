@@ -1,70 +1,88 @@
 import styles from "./Article.module.scss";
+import buttonStyles from "../CustomButton/CustomButton.module.scss";
 import ArticleCard from "./ArticleCard";
 import CustomButton from "../CustomButton/CustomButton";
 import Arrow from "../Arrow/Arrow";
-import { articleCards } from "@/constants/constants";
-// import { useData } from "@/hooks/useData";
+import { useEffect, useState } from "react";
+import { useData } from "@/hooks/useData";
+import type { ArticleCardProps, User } from "@/types/types";
 
 export default function Article() {
 
-    // const { data, isLoading } = useData({ endpoint: "users/3/articles" });
-    // const articleCards = data as any[];
-    // console.log('Article Cards: ', articleCards);
+    const [slideItems, setSlideItems] = useState<ArticleCardProps[]>([]);
+    const { data, isLoading } = useData<ArticleCardProps[]>({ endpoint: "articles" });
+    const { data: users } = useData<User[]>({ endpoint: "users" });
+    console.log(users);
 
-    // if (isLoading)
-    //     return <div>Loading...</div>
+    useEffect(() => {
+        setSlideItems(data || []);
+    }, [data]);
 
+    console.log(slideItems);
+    const handleNext = () => {
+
+        setSlideItems((prev) => {
+            const [first, ...rest] = prev;
+            return [...rest, first];
+        })
+
+    }
+
+    const handlePrev = () => {
+
+        setSlideItems((prev) => {
+            const last = prev[prev.length - 1];
+            const rest = prev.slice(0, -1);
+            return [last, ...rest];
+
+        })
+
+    }
+
+    if (isLoading)
+        return <div>Loading..</div>
 
     return (
 
         <section className={styles.article}>
 
-            <div className={styles.leftContent}>
-                <div className={styles.leftContentHeader}>
+            <div className={`${styles.swiper}`}>
+
+                <div className={styles.articleTitleWrapper}>
                     <h5 className={styles.sectionTitle}>Articles</h5>
                     <h2 className={styles.leftContentTitle}>
                         The best furniture comes from Lalasia
                     </h2>
+                    <p className={styles.leftContentText}>Pellentesque etiam blandit in tincidunt at donec. </p>
                 </div>
-                <p className={styles.leftContentText}>Pellentesque etiam blandit in tincidunt at donec. </p>
-                <div className={styles.imageWrapper}>
-                    <div className={styles.imageShadow}></div>
-                    <img className={styles.leftContentImage} src="/images/left-content-image.jpg" alt="image-1" />
-                    <div className={styles.imageTextWrapper}>
-                        <span className={styles.categoryText}>Tips and Trick</span>
-                        <div className={styles.imageDescriptionWrapper}>
-                            <div className={styles.imageTitleWrapper}>
-                                <span className={styles.imageTitle}>Create Cozy Dinning Room Vibes</span>
-                                <p className={styles.description}>Decorating with neutrals brings balance to the dining room.
-                                    With eclectic decoration on the sides,
-                                    Caruso Dining Table and Cyrillo Dining Chairs elevate the tonal base of the room.
-                                    The modern furniture set gives personality to any space in all types of architecture.
-                                    ‎ The wide volume enables everyone to sit back and relax, be it in the dining room,
-                                    conference, or office.
-                                </p>
-                            </div>
-                            <button className={styles.readMoreBtn}>
-                                <span className={styles.readMoreText}>Read More</span>
-                            </button>
-                        </div>
+
+                <div className={`${styles.swiperWrapper}`}>
+
+                    <div className={`${styles.swiperSlide}`}>
+                        {slideItems.map((slide) => <ArticleCard key={slide.id} className={styles.slideItem} {...slide} users={users || []} />)}
                     </div>
 
-                    <div className={styles.directionButtons}>
-                        <CustomButton className={styles.directionBtn}>
+                    <div className={buttonStyles.directionButtons}>
+                        <CustomButton
+                            id="prev-button"
+                            className={buttonStyles.directionBtn}
+                            handleClick={() => handlePrev()}
+                        >
                             <Arrow />
                         </CustomButton>
-                        <CustomButton className={styles.directionBtn}>
+                        <CustomButton
+                            id="next-button"
+                            className={buttonStyles.directionBtn}
+                            handleClick={() => handleNext()}
+                        >
                             <Arrow />
                         </CustomButton>
                     </div>
 
                 </div>
+
             </div>
 
-            {/* right content */}
-            <div className={styles.rightContent}>
-                {articleCards.map((card, index) => <ArticleCard {...card} key={index} />)}
-            </div>
         </section>
 
     )

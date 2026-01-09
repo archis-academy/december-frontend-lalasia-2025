@@ -1,10 +1,21 @@
 export type ArticleCardProps = {
-    imagePath: string,
-    avatarPath: string,
+    id: number,
+    image: string,
     title: string,
-    description: string,
+    context: string,
     category: string,
-    authorName: string,
-    date: string
+    date: string,
+    autherId: number,
+    users: User[],
+    className?: string
 }
 
+
+export type User = {
+    id: number,
+    fullName: string,
+    email: string,
+    password: string,
+    phoneNumber: string,
+    image: string
+}
