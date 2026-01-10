@@ -1,23 +1,28 @@
 import styles from "@popular/OurPopularProductSection.module.scss";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// CSS
+// Swiper CSS
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// Modüller
+// Swiper modülleri
 import { Navigation, Pagination } from "swiper/modules";
 import { ArrowLeftIcon, ArrowRightIcon } from "@popular/ourpopularIcons";
 
 import { useRef } from "react";
+import ProductCard from "@/components/ProductCard";
+import { useData } from "@/hooks/useData";
 
 const OurPopularProductSection = () => {
-  const blankCards = [1, 2, 3, 4, 5, 6, 7, 8];
+  // Veriyi çekiyoruz
+  const { data: products, isLoading, error } = useData("products");
 
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+
+  if (isLoading) return <p>Yükleniyor...</p>;
+  if (error) return <p>Veri alınamadı</p>;
 
   return (
     <section className={styles.ourPopularProductSection}>
@@ -45,29 +50,18 @@ const OurPopularProductSection = () => {
           }
         }}
         breakpoints={{
-          320: {
-            slidesPerView: 1.2,
-            spaceBetween: 15,
-          },
-          640: {
-            slidesPerView: 1.8,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 3.5,
-            spaceBetween: 20,
-          },
+          320: { slidesPerView: 1.2, spaceBetween: 15 },
+          640: { slidesPerView: 1.8, spaceBetween: 20 },
+          1024: { slidesPerView: 3.5, spaceBetween: 20 },
         }}
       >
-        {blankCards.map((item) => (
-          <SwiperSlide key={item} className={styles.card}>
-            <div className={styles.cardInner}>
-              <p>blankCards {item}</p>
-            </div>
+        {products?.map((product) => (
+          <SwiperSlide key={product.id} className={styles.card}>
+            <ProductCard {...product} />
           </SwiperSlide>
         ))}
 
-        {/* Navigation butonları Swiper’ın içinde  */}
+        {/* Navigation butonları */}
         <div className={styles.navButtonsWrapper}>
           <button ref={prevRef} className={styles.customPrevBtn}>
             <ArrowLeftIcon />
