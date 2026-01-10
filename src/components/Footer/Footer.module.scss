@@ -172,7 +172,7 @@ ul {
   .bottomColumns {
     display: flex;
     justify-content: center; /* ortala */
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .spacer {
@@ -182,7 +182,7 @@ ul {
     gap: 20px;
     flex-wrap: nowrap; /* üçü aynı satırda */
     width: 100%;
-    margin-top: 10px;
+    //margin-top: 15px;
   }
 
   .column {
