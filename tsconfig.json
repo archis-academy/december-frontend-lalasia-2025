@@ -6,6 +6,7 @@
   ],
 
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
@@ -14,7 +15,8 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@images/*": ["src/assets/images/*"],
-      "@icons/*": ["src/assets/icons/*"]
+      "@icons/*": ["src/assets/icons/*"],
+      "@popular/*": ["src/components/welcome/OurPopularProductSection/*"]
     }
   }
 }
