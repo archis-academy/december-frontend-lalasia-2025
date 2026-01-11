@@ -11,12 +11,17 @@ import { Navigation, Pagination } from "swiper/modules";
 import { ArrowLeftIcon, ArrowRightIcon } from "@popular/ourpopularIcons";
 
 import { useRef } from "react";
-import ProductCard from "@/components/ProductCard";
+
 import { useData } from "@/hooks/useData";
+import ProductCard from "@/components/ProductCard/ProductCard";
+import type { Products } from "@/types/types";
 
 const OurPopularProductSection = () => {
-  // Veriyi çekiyoruz
-  const { data: products, isLoading, error } = useData("products");
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useData<Products[]>({ endpoint: "products" });
 
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -50,12 +55,16 @@ const OurPopularProductSection = () => {
           }
         }}
         breakpoints={{
-          320: { slidesPerView: 1.2, spaceBetween: 15 },
+          320: { slidesPerView: 1.6, spaceBetween: 15 },
           640: { slidesPerView: 1.8, spaceBetween: 20 },
-          1024: { slidesPerView: 3.5, spaceBetween: 20 },
+          1024: { slidesPerView: 2, spaceBetween: 20 },
+          1200: { slidesPerView: 2.5, spaceBetween: 20 },
+          1440: { slidesPerView: 3, spaceBetween: 20 },
+          1600: { slidesPerView: 3.4, spaceBetween: 20 },
+          1920: { slidesPerView: 3.8, spaceBetween: 20 },
         }}
       >
-        {products?.map((product) => (
+        {(products || []).slice(0, 10).map((product) => (
           <SwiperSlide key={product.id} className={styles.card}>
             <ProductCard {...product} />
           </SwiperSlide>

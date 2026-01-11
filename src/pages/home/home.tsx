@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <OurPopularProductSection />
-      <ProductList />
+      {/* <ProductList /> */}
     </div>
   );
 }
