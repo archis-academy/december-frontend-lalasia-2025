@@ -1,18 +1,12 @@
-"use server"
+import React from "react";
+import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 
-import { useData } from "@/hooks/useData";
-import Welcome from "@components/welcome/welcome";
-import { use } from "react";
-
-function Home() {
-
-  const { data } = useData({ endpoint: "products" });
-
-
-  console.log(data);
-
-
-  return <div>Home page</div>;
-}
+const Home: React.FC = () => {
+  return (
+    <div>
+      <TestimonialsSection />
+    </div>
+  );
+};
 
 export default Home;
