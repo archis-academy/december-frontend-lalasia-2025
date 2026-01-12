@@ -1,8 +1,5 @@
 import styles from "./Article.module.scss";
-import buttonStyles from "../CustomButton/CustomButton.module.scss";
 import ArticleCard from "./ArticleCard";
-import CustomButton from "../CustomButton/CustomButton";
-import Arrow from "../Arrow/Arrow";
 import { useEffect, useState } from "react";
 import { useData } from "@/hooks/useData";
 import type { ArticleCardProps, User } from "@/types/types";
@@ -16,6 +13,10 @@ export default function Article() {
     useEffect(() => {
         setSlideItems(data || []);
     }, [data]);
+
+
+    console.log("data: ", data);
+    console.log("users: ", users);
 
     const handleNext = () => {
 
@@ -34,7 +35,6 @@ export default function Article() {
             return [last, ...rest];
 
         })
-
     }
 
     if (isLoading)
@@ -52,29 +52,21 @@ export default function Article() {
                         The best furniture comes from Lalasia
                     </h2>
                     <p className={styles.textContent}>Pellentesque etiam blandit in tincidunt at donec. </p>
+
                 </div>
 
                 <div className={`${styles.swiperWrapper}`}>
 
                     <div className={`${styles.swiperSlide}`}>
-                        {slideItems.map((slide) => <ArticleCard key={slide.id} className={styles.slideItem} {...slide} users={users || []} />)}
-                    </div>
-
-                    <div className={buttonStyles.directionButtons}>
-                        <CustomButton
-                            id="prev-button"
-                            className={buttonStyles.directionBtn}
-                            handleClick={() => handlePrev()}
-                        >
-                            <Arrow />
-                        </CustomButton>
-                        <CustomButton
-                            id="next-button"
-                            className={buttonStyles.directionBtn}
-                            handleClick={() => handleNext()}
-                        >
-                            <Arrow />
-                        </CustomButton>
+                        {slideItems.slice(0, 4).map((slide) => <ArticleCard
+                            key={slide.id}
+                            className={styles.slideItem}
+                            {...slide}
+                            users={users || []}
+                            handleNext={handleNext}
+                            handlePrev={handlePrev}
+                        />
+                        )}
                     </div>
 
                 </div>

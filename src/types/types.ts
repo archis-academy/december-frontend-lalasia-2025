@@ -7,7 +7,9 @@ export type ArticleCardProps = {
   date: string,
   autherId: number,
   users: User[],
-  className?: string
+  className?: string,
+  handleNext: () => void,
+  handlePrev: () => void
 }
 
 

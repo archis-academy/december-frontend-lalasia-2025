@@ -31,12 +31,10 @@
     }
 
     .cardContent {
-        inset: 0;
-        display: flex;
-        align-items: end;
         position: absolute;
-        padding-left: pxToRem(26);
-        padding-bottom: pxToRem(66);
+        right: 0;
+        left: 26px;
+        bottom: 66px;
     }
 
     .cardTextWrapper {
@@ -46,6 +44,7 @@
     }
 
     .cardTop {
+        width: 100%;
 
         .cardCategory {
             font-weight: 500;
@@ -76,13 +75,13 @@
             font-size: 18px;
             line-height: 1.8;
             letter-spacing: 0;
-            font-size: clamp(12px, calc((18/1240) * 100vw), 18px);
-            width: 530px;
+            width: 100%;
             color: $white;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             opacity: 70%;
+            font-size: clamp(12px, calc((18/1240) * 100vw), 18px);
         }
     }
 
@@ -100,11 +99,48 @@
 
 }
 
+.directionButtons {
+    position: absolute;
+    bottom: -70px;
+    right: 0px;
+
+    .directionBtn {
+        width: 70px;
+        height: 70px;
+        padding: 21px;
+        cursor: pointer;
+        border: none;
+
+        * {
+            user-select: none;
+            pointer-events: none;
+        }
+
+        &:first-child {
+            background: $white;
+            box-shadow: 0px 4px 90px 0px #AFADB533;
+            color: $main-color;
+            transform: rotate(180deg);
+        }
+
+        &:last-child {
+            background: $main-color;
+            box-shadow: 0px 4px 80px 0px #AFADB533;
+            color: $white;
+        }
+    }
+}
+
+
 .articleCard:not(:first-child) {
     display: flex;
     gap: pxToRem(26);
     grid-column-start: 2;
     grid-row: auto;
+
+    .directionButtons {
+        display: none;
+    }
 
     .imageShadow {
         display: none;
@@ -120,7 +156,6 @@
             object-fit: cover;
         }
     }
-
 
     .cardContent {
         inset: 0;
@@ -214,5 +249,45 @@
             color: $text-color;
             font-size: clamp(12px, calc((14/1240)* 100vw), 14px);
         }
+    }
+}
+
+@include max($desktop-s) {
+    .articleCard:first-child {
+        margin-top: 0;
+        grid-row: auto;
+        margin-inline: auto;
+        grid-column-start: auto;
+        width: 582px;
+    }
+
+    .articleCard:not(:first-child) {
+        grid-column-start: auto;
+
+        .cardDescription {
+            display: none;
+        }
+    }
+}
+
+@include max($tablet-m) {
+    .articleCard:first-child {
+        width: 100%;
+
+        .cardContent {
+            left: 14px;
+            bottom: 18px;
+        }
+
+        .directionButtons {
+            display: none;
+        }
+    }
+
+}
+
+@include max($mobile-s) {
+    .articleCard:not(:first-child) {
+        flex-direction: column;
     }
 }

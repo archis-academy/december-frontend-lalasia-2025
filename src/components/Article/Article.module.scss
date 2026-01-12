@@ -18,7 +18,6 @@
         gap: pxToRem(14);
         max-width: 544px;
         position: absolute;
-        // top: -30px;
         margin-top: -30px;
         z-index: 100;
     }
@@ -61,4 +60,37 @@
         grid-template-columns: 1fr auto;
     }
 
+}
+
+@include max($desktop-s) {
+
+    .article {
+        padding-inline: pxToRem(24);
+    }
+
+    .swiper {
+        .articleTitleWrapper {
+            position: relative;
+            margin-top: 0;
+            z-index: inherit;
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .swiperWrapper {
+            height: fit-content;
+        }
+
+        .swiperSlide {
+            grid-template-columns: 1fr;
+            place-items: center;
+        }
+    }
+
+}
+
+@include max($tablet-m) {
+    .directionButtons {
+        display: none;
+    }
 }
