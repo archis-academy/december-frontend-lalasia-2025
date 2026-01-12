@@ -6,10 +6,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
   color: $black;
   margin: auto;
-  max-width: 1440px;
+  padding: 0 100px;
+  border-bottom: 2px solid $line-color;
+  position: relative;
+  z-index: 999;
+
   .logoArea {
     display: flex;
     gap: 12px;
@@ -26,18 +29,106 @@
     gap: 60px;
     a {
       color: $text-color;
-      font-weight: 500px;
+      font-weight: 500;
       font-size: 18px;
       text-decoration: none;
+      transition: color 0.3s ease;
+      &:hover {
+        color: darken($text-color, 20%);
+      }
     }
   }
   .iconButton {
     background-color: transparent;
     cursor: pointer;
     border: none;
+    padding: 5px;
   }
   .icon {
     display: flex;
     gap: 20px;
+  }
+
+  .hamburgerArea {
+    display: none;
+    .hamburgerMenu {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 5px;
+
+      // Çizgilerin kendisi
+      span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $text-color;
+        transition: all 0.3s ease-in-out; // Dönüşüm efekti
+      }
+
+      // Aktif olduğunda (Çarpı Olma Hali)
+      &.active {
+        // 1. Çizgi: 45 derece dön ve biraz aşağı kay
+        span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        // 2. Çizgi (Ortadaki): Kaybol
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        // 3. Çizgi: Tersi yönde 45 derece dön ve yukarı kay
+        span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @media (max-width: $desktop-l) {
+    padding: 0 20px;
+  }
+  @media (max-width: $tablet-m) {
+    height: 70px !important;
+
+    .linkArea {
+      // Kapalı durum (Varsayılan)
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: $white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      z-index: -1; // Navbarın arkasında kalsın ki logo kapanmasın
+
+      // GİZLEME EFEKTLERİ
+      opacity: 0; // Tamamen şeffaf
+      visibility: hidden; // Tıklanamaz hale getirir
+      transform: translateY(
+        -20px
+      ); // 20px yukarıda başlasın (kayma efekti için)
+      transition: all 0.3s ease-in-out; // AÇILIŞ EFEKTİ HIZI VE TÜRÜ
+
+      // Açık durum (.open class'ı gelince)
+      &.open {
+        // GÖRÜNME EFEKTLERİ
+        opacity: 1; // Görünür ol
+        visibility: visible; // Tıklanabilir ol
+        transform: translateY(0); // Kendi yerine kay
+      }
+    }
+
+    .icon {
+      display: none;
+    }
+    .hamburgerArea {
+      display: flex;
+    }
   }
 }

@@ -1,10 +1,12 @@
 import React from 'react'
-import { RiUserLine } from "react-icons/ri";
-import { BsHandbag } from "react-icons/bs";
 import styles from './Navbar.module.scss';
-
+import { useState } from "react";
 
 const Navbar: React.FC = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
     return (
         <header className={styles.navbarSection}>
             <div className={styles.logoArea}>
@@ -13,7 +15,7 @@ const Navbar: React.FC = () => {
                 Lalasia
                 </div>
             </div>
-           <div className={styles.linkArea}>
+            <div className={`${styles.linkArea} ${isMenuOpen ? styles.open : ""}`}>
          <a href="#" >Product</a>
          <a href="#" >Services</a>
          <a href="#" >Article</a>
@@ -22,12 +24,19 @@ const Navbar: React.FC = () => {
            <div className={styles.icon}>
        
       <button className={styles.iconButton}>
-        <BsHandbag size={20} />
+        <img src="./icons/navbar-icon/hangbag.svg" alt="hangbag-icon" />
       </button> 
       <button className={styles.iconButton}>
-        <RiUserLine size={20} />
+        <img src="./icons/navbar-icon/userIcon.svg" alt="user-icon" />
       </button>
-    </div>
+      </div>
+      <div className={styles.hamburgerArea}>
+        <button className={`${styles.hamburgerMenu} ${isMenuOpen ? styles.active : ""}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        </div>
         </header>
     );
 };
