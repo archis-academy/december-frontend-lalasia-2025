@@ -219,8 +219,7 @@
     .cardBottom {
         display: flex;
         align-items: center;
-        width: fit-content;
-        gap: pxToRem(24);
+        justify-content: space-between;
 
         .cardDate {
             font-weight: 500;
@@ -289,5 +288,11 @@
 @include max($mobile-s) {
     .articleCard:not(:first-child) {
         flex-direction: column;
+
+        .cardBottom {
+            .cardDate {
+                display: none;
+            }
+        }
     }
 }

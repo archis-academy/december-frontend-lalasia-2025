@@ -56,12 +56,13 @@ export default function ArticleCard({
                             <Arrow />
                         </CustomButton>
                     </div>
+
                     <div className={styles.cardBottom}>
                         <p className={styles.cardAuthor}>
                             <img src={user?.image} alt="author-1" />
                             <span className={styles.cardAuthorName}>{user?.fullName}</span>
                         </p>
-                        <span className={styles.cardDate}>{date}</span>
+                        <span className={styles.cardDate}>Friday, 1 April 2022</span>
                     </div>
                 </div>
             </div>
