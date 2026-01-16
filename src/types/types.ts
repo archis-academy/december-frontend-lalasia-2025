@@ -21,12 +21,28 @@ export type User = {
   phoneNumber: string,
   image: string
 }
-export type Products = {
-  id: string;
-  title: string;
-  subTitle: string;
-  desc: string;
-  image: string;
-  price: number;
-};
 
+// export type Products = {
+//   id: string;
+//   title: string;
+//   subTitle: string;
+//   desc: string;
+//   image: string;
+//   price: number;
+// };
+
+export type Product = {
+  id: string,
+  title: string,
+  subTitle: string,
+  category: string,
+  desc: string,
+  image: string,
+  price: string,
+  colorPallet: [],
+}
+
+export type Basket = {
+  product: Product,
+  count: number,
+}
