@@ -1,0 +1,33 @@
+@use "/src/styles/variables" as *;
+
+// .directionButtons {
+//     position: absolute;
+//     bottom: -2px;
+//     left: 430px;
+
+//     .directionBtn {
+//         width: 70px;
+//         height: 70px;
+//         padding: 21px;
+//         cursor: pointer;
+//         border: none;
+
+//         * {
+//             user-select: none;
+//             pointer-events: none;
+//         }
+
+//         &:first-child {
+//             background: $white;
+//             box-shadow: 0px 4px 90px 0px #AFADB533;
+//             color: $main-color;
+//             transform: rotate(180deg);
+//         }
+
+//         &:last-child {
+//             background: $main-color;
+//             box-shadow: 0px 4px 80px 0px #AFADB533;
+//             color: $white;
+//         }
+//     }
+// }
