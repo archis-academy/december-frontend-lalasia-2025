@@ -16,7 +16,11 @@ $line-color: #f3f3f3;
  */
 
 // Font family
-$font-primary: "Eudoxus Sans", system-ui, -apple-system, sans-serif;
+$font-primary:
+  "Eudoxus Sans",
+  system-ui,
+  -apple-system,
+  sans-serif;
 
 // Base font size
 $font-base: pxToRem(16);

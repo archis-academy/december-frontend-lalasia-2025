@@ -1,9 +1,12 @@
 import React from 'react'
 import styles from './Navbar.module.scss';
 import { useState } from "react";
+import { useLocation } from "react-router";
 
 const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+    const isActive = (path: string) => location.pathname === path;
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -16,10 +19,10 @@ const Navbar: React.FC = () => {
                 </div>
             </div>
             <div className={`${styles.linkArea} ${isMenuOpen ? styles.open : ""}`}>
-         <a href="#" >Product</a>
-         <a href="#" >Services</a>
-         <a href="#" >Article</a>
-         <a href="#" >About Us</a>
+      <a href="/products" className={isActive("/products") ? styles.active : ""}>Product</a>
+      <a href="/services" className={isActive("/services") ? styles.active : ""}>Services</a>
+      <a href="/articles" className={isActive("/articles") ? styles.active : ""}>Article</a>
+      <a href="/about-us" className={isActive("/about-us") ? styles.active : ""}>About Us</a>
            </div>
            <div className={styles.icon}>
        
