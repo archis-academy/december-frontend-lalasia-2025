@@ -13,12 +13,12 @@ import Article from "@/components/Article/Article.tsx";
 function Home() {
 
   return <div>Home page
-  
+  <Benefits/>
 
 
  
     <Article />
- <Benefits/>
+ 
 
   </div>;
 }
