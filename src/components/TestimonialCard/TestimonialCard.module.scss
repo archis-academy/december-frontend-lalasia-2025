@@ -1,0 +1,63 @@
+@use "/src/styles/variables" as *;
+@use "/src/styles/functions" as *;
+@use "/src/styles/mixins" as *;
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.testimonialCard {
+  background: $white;
+  padding: 24px;
+  border-radius: 16px;
+  width: 545px;
+  height: 256px;
+ 
+
+  .quote {
+    font-size: 40px;
+    color: #7bc4b2;
+  }
+
+  .text {
+    color: $paragraph-color;
+    font-family: $font-primary;
+    font-size: 18px;
+  }
+
+  .footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .rating {
+      display: flex;
+      gap: 6px;
+      font-weight: 600;
+
+      .star {
+        color: #f5b400;
+      }
+    }
+  }
+}
