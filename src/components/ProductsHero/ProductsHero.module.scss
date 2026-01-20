@@ -50,12 +50,13 @@
     .heroContent {
       position: absolute;
       display: grid;
+      width: 500px;
       gap: 15px;
       top: 25%;
       left: 10%;
       @media (max-width: $tablet-m) {
         gap: 8px;
-         top: 15%;
+        top: 15%;
       }
       .discountBadge {
         background-color: $main-color;
@@ -88,6 +89,7 @@
           color: $white;
           font-weight: 700;
           font-size: 44px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
           line-height: 130%;
           @media (max-width: $tablet-m) {
             font-size: 16px;
@@ -95,11 +97,11 @@
           }
         }
         .heroDescription {
-          opacity: 0.8;
           color: $white;
           font-weight: bold;
           font-size: 24px;
           max-width: 416px;
+         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
           @media (max-width: $tablet-m) {
             font-size: 12px;
             line-height: 1.8;

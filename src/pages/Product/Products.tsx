@@ -1,7 +1,9 @@
+import ProductsHero from "@/components/ProductsHero/ProductsHero"
+
 const Products = () => {
   return (
     <div>
-      Products
+        <ProductsHero/>
     </div>
   )
 }
