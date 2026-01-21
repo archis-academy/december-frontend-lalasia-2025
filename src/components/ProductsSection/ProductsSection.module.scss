@@ -1,0 +1,83 @@
+@use "/src/styles/variables" as *;
+
+.productsSection {
+  display: grid;
+  justify-content: center;
+  .header {
+    max-width: 356px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 40px;
+    @media (max-width: 728px) {
+      margin-bottom: 0px;
+    }
+    .totalProduct {
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 1.3;
+      color: $text-color;
+      @media (max-width: 728px) {
+        font-size: 18px;
+      }
+    }
+    .totalProductCount {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.3;
+      color: $main-color;
+      padding: 10px 16px;
+      background-color: #f9f9f9;
+      border-radius: 20px;
+       @media (max-width: 728px) {
+        font-size: 12px;
+      }
+    }
+  }
+  .productsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: fit-content;
+    margin: 0 auto;
+
+    @media (max-width: 1226px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 830px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .paginate {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    .paginationContainer {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 15px;
+    }
+    .paginationPageItem {
+      padding: 10px;
+      font-size: 20px;
+      list-style: none;
+      cursor: pointer;
+       @media (max-width: 728px) {
+        font-size: 16px;
+      }
+    }
+    .paginationActive {
+      background-color: $main-color;
+      color: $white;
+    }
+    .paginationDisabled {
+      opacity: 0.4;
+    }
+    .paginationPrevLink,
+    .paginationNextLink {
+      cursor: pointer;
+    }
+  }
+}

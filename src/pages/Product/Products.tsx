@@ -1,7 +1,9 @@
+import App from "@/components/ProductsSection/ProductsSection"
+
 const Products = () => {
   return (
     <div>
-      Products
+     <App/>
     </div>
   )
 }
