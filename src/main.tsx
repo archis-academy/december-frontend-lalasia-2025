@@ -15,6 +15,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
 import AuthLayout from "./layouts/AuthLayout/AuthLayout";
+import OurProduct from "./components/OurProduct/OurProduct";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
