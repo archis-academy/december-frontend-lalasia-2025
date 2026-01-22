@@ -1,46 +1,46 @@
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {  Autoplay, Navigation } from 'swiper/modules'; 
+import  { useData } from '@/hooks/useData'; 
+import TestimonialCard from '../TestimonialCard/TestimonialCard';
 
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import { useData } from "@/hooks/useData";
-import TestimonialCard from "./TestimonialCard";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import styles from "./TestimonialsSection.module.scss";
+import 'swiper/css';
+import 'swiper/css/navigation'; 
+import styles from './TestimonialsSection.module.scss';
 
 const TestimonialsSection: React.FC = () => {
-  const { data: testimonials, isLoading, error } = useData("users/customerSays");
+  const { data, isLoading, error } = useData({ endpoint: "customerSays" });
 
   if (isLoading) return <div className={styles.loading}>Yükleniyor...</div>;
-  if (error) return <div className={styles.error}>Hata oluştu.</div>;
-  if (!testimonials?.length) return null;
+  if (error) return <div className={styles.error}>Hata oluştu!</div>;
 
-  return (
+return (
     <section className={styles.testimonialsSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h4 className={styles.subHeading}>Testimonials</h4>
+          <span className={styles.subHeading}>Testimonials</span>
           <h2 className={styles.heading}>What our customer say</h2>
+          <p className={styles.description}>
+            Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim
+            placerat nisi, adipiscing mauris non purus parturient.
+          </p>
         </div>
 
         <Swiper
-          modules={[Autoplay, Pagination]}
-          spaceBetween={24}
+          modules={[ Autoplay, Navigation]} 
+          spaceBetween={30}
           slidesPerView={1}
-          loop={true}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          navigation={true} 
+          autoplay={{ delay: 5000 }}
           breakpoints={{
-            640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          className={styles.mySwiper}
+          className={styles.swiperContainer}
         >
-          {testimonials.map((item: any, index: number) => (
-            <SwiperSlide key={item.id || index}>
-              <TestimonialCard {...item} />
+          {data && data.map((item: any) => (
+            <SwiperSlide key={item.id}>
+              <TestimonialCard customer={item} />
             </SwiperSlide>
           ))}
         </Swiper>

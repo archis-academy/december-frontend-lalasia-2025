@@ -1,37 +1,37 @@
-
+import React from 'react';
 import styles from "./TestimonialCard.module.scss";
+import { QuoteUp } from 'iconsax-react';
 
-const TestimonialCard = () => {
+const TestimonialCard: React.FC<{ customer: any }> = ({ customer }) => {
+  const commentText = customer.comment; 
+  const ratingValue = customer.rating;
+  
+  const userAvatar = `https://i.pravatar.cc/150?u=${customer.userId}`;
+  const userName = `Kullanici #${customer.userId}`;
+
   return (
-    <div className={styles.testimonial}>
     <div className={styles.testimonialCard}>
-      <span className={styles.quote}>“</span>
-
-      <p className={styles.text}>
-        Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim
-        placerat nisi, adipiscing mauris non.
-      </p>
-
+      <div className={styles.quoteWrapper}>
+        <QuoteUp 
+          size="40" 
+          color="#40B4A6" 
+          variant="Bold" 
+        />
+      </div>
+      
+      <p className={styles.text}>{commentText}</p>
+      
       <div className={styles.footer}>
         <div className={styles.user}>
-          <img
-            src="/images/testimonial.png"
-            alt="Janne Cooper"
-            className={styles.avatar}
-          />
-          <span className={styles.name}>Janne Cooper</span>
+          <img src={userAvatar} alt="User" />
+          <span>{userName}</span>
         </div>
 
         <div className={styles.rating}>
-          <img
-            src="/icons/star.svg"
-            alt="Star"
-            className={styles.starIcon}
-          />
-          <span className={styles.score}>4.3</span>
+          <img src="/icons/star.svg" alt="star" className={styles.starIcon} />
+          <span className={styles.score}>{ratingValue}</span>
         </div>
       </div>
-    </div>
     </div>
   );
 };
