@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "@pages/home/home";
+import "./styles/_reset.scss";
 import "@src/main.scss";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Article from "./pages/Article/Article";
@@ -14,6 +15,8 @@ import SignUp from "./pages/SignUp/SignUp";
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
 import AuthLayout from "./layouts/AuthLayout/AuthLayout";
+
+
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -30,6 +33,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="articles" element={<Article />} />
           <Route path="articles/:id" element={<ArticleDetail />} />
           <Route path="about-us" element={<AboutUs />} />
+          
 
         </Route>
         {/* MainLayout end */}
