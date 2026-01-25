@@ -16,6 +16,8 @@ import MainLayout from "./layouts/MainLayout/MainLayout";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
 import AuthLayout from "./layouts/AuthLayout/AuthLayout";
 
+
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
@@ -31,6 +33,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="articles" element={<Article />} />
           <Route path="articles/:id" element={<ArticleDetail />} />
           <Route path="about-us" element={<AboutUs />} />
+          
 
         </Route>
         {/* MainLayout end */}
