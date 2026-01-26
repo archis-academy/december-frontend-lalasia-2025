@@ -78,13 +78,14 @@
       .stat {
         h3 {
           font-size: 38px;
-          text-align: right;
           font-weight: 700;
           color: #222;
+          padding-left: 100px;
         }
 
         span {
           font-size: 13px;
+          padding-left: 60px;
           color: #777;
         }
       }
@@ -111,11 +112,11 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 518px) {
     padding: 60px 0;
 
     .left h2 {
-      font-size: 28px;
+      font-size: 40px;
     }
 
     .stats {
