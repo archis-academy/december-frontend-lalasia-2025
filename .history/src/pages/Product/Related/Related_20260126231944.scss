@@ -1,0 +1,35 @@
+@use "@styles/_variables.scss" as *;
+
+.related {
+  padding: 2rem 0;
+
+  &__title {
+    color: blue;
+   font-family: sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+
+.card:nth-child(4) {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .related__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:nth-child(4) {
+    display: block;
+  }
+}
