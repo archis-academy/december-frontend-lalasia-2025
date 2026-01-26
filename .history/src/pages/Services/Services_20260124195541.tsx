@@ -1,5 +1,3 @@
-import Portfolio from "./Portfolio/Portfolio"
-
 const Services = () => {
   return (
     <div>
