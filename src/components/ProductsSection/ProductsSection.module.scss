@@ -4,13 +4,21 @@
   display: grid;
   justify-content: center;
   .header {
-    max-width: 356px;
     display: flex;
+    justify-content: space-between;
     gap: 10px;
     align-items: center;
     margin-bottom: 40px;
     @media (max-width: 728px) {
       margin-bottom: 0px;
+    }
+    .headerLeft {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @media (max-width: 728px) {
+        gap: 10px;
+      }
     }
     .totalProduct {
       font-weight: 700;
@@ -29,8 +37,38 @@
       padding: 10px 16px;
       background-color: #f9f9f9;
       border-radius: 20px;
-       @media (max-width: 728px) {
+      @media (max-width: 728px) {
         font-size: 12px;
+      }
+    }
+    .sortDropdown{
+      display: grid;
+      gap: 10px;
+      justify-content: center;
+      .sortSummary{
+        display: flex;
+        gap: 10px;
+        cursor: pointer;
+        .sortText{
+          font-size: 18px;
+          font-weight: 500;
+          color: $text-color;
+        }
+      }
+      .sortMenu{
+        display: grid;
+       
+        justify-content: center;
+        button{
+          border: none;
+          cursor: pointer;
+          padding: 5px 13px;
+          border-bottom: 1px solid rgb(192, 192, 192);
+          font-size: 14px;
+          &:hover{
+            opacity: 0.7;
+          }
+        }
       }
     }
   }
@@ -64,7 +102,7 @@
       font-size: 20px;
       list-style: none;
       cursor: pointer;
-       @media (max-width: 728px) {
+      @media (max-width: 728px) {
         font-size: 16px;
       }
     }

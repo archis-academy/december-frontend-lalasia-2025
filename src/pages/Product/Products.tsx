@@ -1,11 +1,11 @@
-import App from "@/components/ProductsSection/ProductsSection"
+import ProductsSection from "@/components/ProductsSection/ProductsSection";
 
 const Products = () => {
   return (
     <div>
-     <App/>
+      <ProductsSection />
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
