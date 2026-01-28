@@ -6,9 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 interface Article {
   id: string;
   title: string;
-  subTitle: string;
   image: string;
-  context: string;
   category: string;
   autherId: number;
   date: string;
@@ -116,10 +114,7 @@ const ArticleCarousel = () => {
         <div className={styles.card}>
           <span className={styles.category}>{current.category}</span>
           <h3 className={styles.title}>{current.title}</h3>
-          <p className={styles.subTitle}>{current.subTitle}</p>
-          <p className={styles.context}>{current.context}</p>
-
-
+         
           <div className={styles.footer}>
             <div className={styles.avatar}>
               {author?.image ? (
