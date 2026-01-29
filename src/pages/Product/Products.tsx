@@ -1,9 +1,11 @@
+import ProductsSection from "@/components/ProductsSection/ProductsSection";
+
 const Products = () => {
   return (
     <div>
-      Products
+      <ProductsSection />
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
