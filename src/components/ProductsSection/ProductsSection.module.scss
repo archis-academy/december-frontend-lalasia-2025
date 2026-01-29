@@ -104,12 +104,15 @@
       gap: 15px;
     }
     .paginationPageItem {
-      padding: 10px;
       font-size: 20px;
       list-style: none;
       cursor: pointer;
       @media (max-width: 728px) {
         font-size: 16px;
+      }
+
+      &> a {
+        padding: 20px 10px;
       }
     }
     .paginationActive {
