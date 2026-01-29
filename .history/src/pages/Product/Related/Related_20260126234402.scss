@@ -1,0 +1,61 @@
+@use "@styles/_variables.scss" as *;
+
+.related {
+  padding: 2rem 0;
+  font-family: 'Inter', sans-serif; // 👈 font artık çalışır
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .card {
+    font-family: 'Inter', sans-serif; // 👈 garanti çözüm
+
+    &__category {
+      font-size: 0.75rem;
+      color: #9a9a9a;
+      font-weight: 400;
+    }
+
+    &__title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    &__desc {
+      font-size: 0.85rem;
+      color: #9a9a9a;
+    }
+
+    &__price {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  /* 💻 Desktop: sadece 3 ürün */
+  .card:nth-child(4) {
+    display: none;
+  }
+}
+
+/* 📱 Mobile: 4 ürün */
+@media (max-width: 768px) {
+  .related {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card:nth-child(4) {
+      display: block;
+    }
+  }
+}

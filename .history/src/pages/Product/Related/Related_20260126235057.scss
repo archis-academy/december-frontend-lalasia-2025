@@ -1,0 +1,61 @@
+@use "@styles/_variables.scss" as *;
+
+.related {
+  padding: 2rem 0;
+  font-family: sans-serif; 
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .card {
+    font-family: sans-serif; 
+
+    &__category {
+      font-size: 18px;
+      color: $paragraph-color;
+      font-weight: 700;
+    }
+
+    &__title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    &__desc {
+      font-size: 0.85rem;
+      color: $paragraph-color;
+    }
+
+    &__price {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  /* 💻 Desktop: sadece 3 ürün */
+  .card:nth-child(4) {
+    display: none;
+  }
+}
+
+/* 📱 Mobile: 4 ürün */
+@media (max-width: 768px) {
+  .related {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card:nth-child(4) {
+      display: block;
+    }
+  }
+}
