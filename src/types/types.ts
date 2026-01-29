@@ -22,14 +22,14 @@ export type User = {
   image: string
 }
 
-// export type Products = {
-//   id: string;
-//   title: string;
-//   subTitle: string;
-//   desc: string;
-//   image: string;
-//   price: number;
-// };
+export type Products = {
+  id: string;
+  title: string;
+  subTitle: string;
+  desc: string;
+  image: string;
+  price: number;
+};
 
 export type Product = {
   id: string,
@@ -39,7 +39,7 @@ export type Product = {
   desc: string,
   image: string,
   price: string,
-  colorPallet: [],
+  colorPallet?: [],
 }
 
 export type Basket = {
