@@ -1,10 +1,10 @@
+import ArticleCarousel from "@/components/ArticleCarousel/ArticleCarousel";
 
 const Article = () => {
   return (
     <div>
-      Article
+      <ArticleCarousel />
     </div>
   )
 }
-
-export default Article
+export default Article;
