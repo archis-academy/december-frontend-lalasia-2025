@@ -3,6 +3,7 @@ import styles from './ArticleCarousel.module.scss';
 import { useData } from '@/hooks/useData';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+
 interface Article {
   id: string;
   title: string;
@@ -15,7 +16,7 @@ interface Article {
 interface User {
   id: number;
   image: string;
-  name?: string;
+  fullName?: string;
 }
 
 const ArticleCarousel = () => {
@@ -37,12 +38,6 @@ const ArticleCarousel = () => {
     }, {});
   }, [users]);
 
-  const formatDate = (date: string) =>
-    new Date(date).toLocaleDateString('en-US', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric',
-    });
 
 
   if (isLoading) {
@@ -114,7 +109,7 @@ const ArticleCarousel = () => {
         <div className={styles.card}>
           <span className={styles.category}>{current.category}</span>
           <h3 className={styles.title}>{current.title}</h3>
-         
+
           <div className={styles.footer}>
             <div className={styles.avatar}>
               {author?.image ? (
@@ -123,13 +118,10 @@ const ArticleCarousel = () => {
                 <div className={styles.avatarFallback} />
               )}
             </div>
-
             <span className={styles.authorLabel}>
-              {author?.name || 'Author'}
+              {author?.fullName || 'Author'}
             </span>
-            <span className={styles.date}>
-              {formatDate(current.date)}
-            </span>
+            <span className={styles.cardDate}>Tuesday, 17 May 2022</span>
           </div>
         </div>
       </div>
