@@ -29,7 +29,7 @@ return (
         <Swiper
           modules={[ Autoplay, Navigation]} 
           spaceBetween={30}
-          slidesPerView={1}
+          slidesPerView="auto"
           navigation={true} 
           autoplay={{ delay: 5000 }}
           breakpoints={{
