@@ -1,11 +1,11 @@
-// @use "/src/styles/variables" as *;
-// @use "/src/styles/functions" as *;
-// @use "/src/styles/mixins" as *;
+@use "/src/styles/variables" as *;
+@use "/src/styles/functions" as *;
+@use "/src/styles/mixins" as *;
 
 .popular {
 
     .popularSwiper {
-        min-height: 544px;
+        min-height: fit-content;
         position: relative;
     }
 
@@ -19,7 +19,9 @@
         justify-content: center;
         background: #15141199;
         backdrop-filter: blur(15px);
-        top: 246px;
+        // top: 246px;
+        top: 50%;
+        transform: translateY(-50%);
         z-index: 10;
         border: none;
         cursor: pointer;
@@ -75,4 +77,18 @@
         margin-inline: auto;
     }
 
+}
+
+@include max($tablet-m) {
+    .popular {
+        padding-inline: pxToRem(24);
+
+        .popularText {
+            width: 100%;
+        }
+
+        .swiperButtons {
+            display: none;
+        }
+    }
 }

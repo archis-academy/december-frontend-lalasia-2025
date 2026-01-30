@@ -19,6 +19,8 @@ export default function PopularProducts() {
         [data]
     );
 
+    console.log(popularProducts);
+
     if (isLoading) return <div>Loading...</div>
 
     return (
@@ -41,16 +43,35 @@ export default function PopularProducts() {
                     nextEl: `.${styles.swiperNextButton}`,
                     prevEl: `.${styles.swiperPrevButton}`,
                 }}
-                spaceBetween={29}
+                spaceBetween={10}
                 centeredSlides={true}
-                slidesPerView={'auto'}
+                slidesPerView={1}
                 modules={[Navigation, Autoplay]}
                 className={styles.popularSwiper}
+                breakpoints={{
+
+                    320: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20
+                    },
+
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 15
+                    },
+
+                    1024: {
+                        slidesPerView: 3.5,
+                        spaceBetween: 20
+                    }
+                }}
             >
 
                 {popularProducts.map((card) =>
                     <SwiperSlide
-                        style={{ width: 'fit-content' }}
+                        style={{
+                            width: 'fit-content',
+                        }}
                     >
                         <ProductCard key={card.id} {...card} />
                     </SwiperSlide>
