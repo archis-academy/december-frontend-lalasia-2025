@@ -37,3 +37,10 @@ export type Basket = {
   product: Product;
   count: number;
 };
+
+export type Team = {
+  fullName: string;
+  image: string;
+  job: string;
+  id: string;
+};
