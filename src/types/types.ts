@@ -1,17 +1,17 @@
 export type ArticleCardProps = {
-  id: number,
-  image: string,
-  title: string,
-  context: string,
-  category: string,
-  date: string,
-  autherId: number,
-  users: User[],
-  className?: string,
-  handleNext: () => void,
-  handlePrev: () => void
-}
-
+  id: number;
+  image: string;
+  title: string;
+  context: string;
+  category: string;
+  date: string;
+  autherId: number;
+  users: User[];
+  className?: string;
+  handleNext: () => void;
+  handlePrev: () => void;
+};
+export type SortKey = "priceAsc" | "priceDesc" | "titleAsc" | "titleDesc";
 
 export type User = {
   id: number,
@@ -43,6 +43,6 @@ export type Product = {
 }
 
 export type Basket = {
-  product: Product,
-  count: number,
-}
+  product: Product;
+  count: number;
+};

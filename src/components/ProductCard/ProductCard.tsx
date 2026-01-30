@@ -1,5 +1,4 @@
 import style from "./ProductCard.module.scss";
-
 import type { Product } from "@/types/types";
 
 const ProductCard = ({
@@ -12,10 +11,7 @@ const ProductCard = ({
 }: Product) => (
   <div className={style.productCard}>
     <div className={style.imageContainer}>
-      <img
-        src={image}
-        alt={title}
-      />
+      <img src={image} alt={title} />
     </div>
     <div className={style.productInfo}>
       <h5>{category}</h5>

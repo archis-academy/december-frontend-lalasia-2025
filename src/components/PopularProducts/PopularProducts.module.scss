@@ -3,6 +3,7 @@
 @use "/src/styles/mixins" as *;
 
 .popular {
+    margin-block: pxToRem(180);
 
     .popularSwiper {
         min-height: fit-content;
@@ -19,7 +20,6 @@
         justify-content: center;
         background: #15141199;
         backdrop-filter: blur(15px);
-        // top: 246px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 10;

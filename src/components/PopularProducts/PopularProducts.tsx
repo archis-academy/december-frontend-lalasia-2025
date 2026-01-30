@@ -19,8 +19,6 @@ export default function PopularProducts() {
         [data]
     );
 
-    console.log(popularProducts);
-
     if (isLoading) return <div>Loading...</div>
 
     return (
