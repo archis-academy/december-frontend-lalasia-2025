@@ -34,6 +34,7 @@
     position: relative;
     width: 100% !important;
     max-width: 1440px;
+    margin-bottom: 50px;
     &::after {
       content: "";
       position: absolute;
@@ -101,7 +102,7 @@
           font-weight: bold;
           font-size: 24px;
           max-width: 416px;
-         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
           @media (max-width: $tablet-m) {
             font-size: 12px;
             line-height: 1.8;
