@@ -1,7 +1,7 @@
 .container {
   max-width: 1240px; 
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 40px 20px;
 }
 
 .content {
@@ -12,7 +12,7 @@
 }
 
 .card {
-  width: 360px; 
+  width: calc(33.33% - 20px); 
   display: flex;
   flex-direction: column;
 }
@@ -40,16 +40,21 @@
 
 @media (max-width: 950px) {
   .card {
-    width: 400px; 
+    width: calc(33.33% - 20px); 
   }
 }
-
-@media (max-width: 768px) {
-  .content {
-    justify-content: center; 
+@media(max-width: 850px){
+  .card{
+    width:calc(33.33% - 20px); 
   }
+
+  .number { font-size: 32px; }
+  .title { font-size: 14px; }
+  .text { font-size: 12px; }
+}
+
+@media (max-width: 550px) {
   .card {
     width: 100%; 
-    max-width: 500px; 
   }
 }
