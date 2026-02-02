@@ -7,6 +7,8 @@ import TestimonialCard from '../TestimonialCard/TestimonialCard';
 import 'swiper/css';
 import 'swiper/css/navigation'; 
 import styles from './TestimonialsSection.module.scss';
+import "./TestimonialCardSwiper.scss";
+
 
 const TestimonialsSection: React.FC = () => {
   const { data, isLoading, error } = useData({ endpoint: "customerSays" });
@@ -26,16 +28,14 @@ return (
           </p>
         </div>
 
-        <Swiper
-          modules={[ Autoplay, Navigation]} 
-          spaceBetween={30}
-          slidesPerView="auto"
+     <Swiper
+          modules={[Autoplay, Navigation]}
+          spaceBetween={5}
+          slidesPerView={"auto"}   
+          centeredSlides={true}    
+          loop={true}             
           navigation={true} 
-          autoplay={{ delay: 5000 }}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           className={styles.swiperContainer}
         >
           {data && data.map((item: any) => (
