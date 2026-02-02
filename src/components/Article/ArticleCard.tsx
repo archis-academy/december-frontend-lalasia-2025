@@ -1,33 +1,70 @@
 import styles from "./ArticleCard.module.scss";
-import { type ArticleCardProps } from '@/types/types';
+import type { ArticleCardProps } from '@/types/types';
+import CustomButton from "../CustomButton/CustomButton";
+import Arrow from "../Arrow/Arrow";
 
-export default function ArticleCard({ imagePath, avatarPath, title, description, category, authorName, date }: ArticleCardProps) {
+export default function ArticleCard({
+    image,
+    title,
+    context,
+    category,
+    date,
+    autherId,
+    users,
+    handleNext,
+    handlePrev
+}: ArticleCardProps) {
+
+    const user = users.find((value) => Number(value.id) === Number(autherId));
+
     return (
-        <div className={styles.articleCard}>
+        <div className={`${styles.articleCard}`}>
 
-            <div className={styles.articleCardImageWrapper}>
-                <img src={imagePath} alt='image' />
+
+            <div className={styles.imageWrapper}>
+                <div className={styles.imageShadow}></div>
+                <img className={styles.image} src={image} alt='image' />
             </div>
 
-            <div className={styles.articleCardContent}>
+            <div className={styles.cardContent}>
 
-                <div className={styles.articleCardTop}>
-                    <span className={styles.articleCardCategory}>{category}</span>
+                <div className={styles.cardTextWrapper}>
 
-                    <div className={styles.articleCardTitleWrapper}>
-                        <h3 className={styles.articleCardTitle}>{title}</h3>
-                        <p className={styles.articleCardDescription}>{description}</p>
+                    <div className={styles.cardTop}>
+                        <span className={styles.cardCategory}>{category}</span>
+                        <div className={styles.titleWrapper}>
+                            <h3 className={styles.cardTitle}>{title}</h3>
+                            <p className={styles.cardDescription}>{context}</p>
+                        </div>
+                    </div>
+
+                    <a className={styles.readMoreBtn} href="#">Read More</a>
+
+                    <div className={styles.directionButtons}>
+                        <CustomButton
+                            id="prev-button"
+                            className={styles.directionBtn}
+                            handleClick={() => handlePrev()}
+                        >
+                            <Arrow />
+                        </CustomButton>
+                        <CustomButton
+                            id="next-button"
+                            className={styles.directionBtn}
+                            handleClick={() => handleNext()}
+                        >
+                            <Arrow />
+                        </CustomButton>
+                    </div>
+
+                    <div className={styles.cardBottom}>
+                        <p className={styles.cardAuthor}>
+                            <img src={user?.image} alt="author-1" />
+                            <span className={styles.cardAuthorName}>{user?.fullName}</span>
+                        </p>
+                        <span className={styles.cardDate}>Friday, 1 April 2022</span>
                     </div>
                 </div>
-
-                <div className={styles.articleCardBottom}>
-                    <p className={styles.articleCardAuthor}>
-                        <img src={avatarPath} alt="author-1" />
-                        <span className={styles.articleCardAuthorName}>{authorName}</span>
-                    </p>
-                    <span className={styles.articleCardBottomDate}>{date}</span>
-                </div>
-
             </div>
 
         </div>

@@ -1,12 +1,29 @@
 export type ArticleCardProps = {
-  date: string;
+  id: number;
+  image: string;
   title: string;
+  context: string;
   category: string;
-  imagePath: string;
-  authorName: string;
-  avatarPath: string;
-  description: string;
+  date: string;
+  autherId: number;
+  users: User[];
+  className?: string;
+  handleNext: () => void;
+  handlePrev: () => void;
 };
+
+export type SortKey = "priceAsc" | "priceDesc" | "titleAsc" | "titleDesc";
+
+
+export type User = {
+  id: number,
+  fullName: string,
+  email: string,
+  password: string,
+  phoneNumber: string,
+  image: string
+}
+
 
 export type Products = {
   id: string;
@@ -22,4 +39,26 @@ export type Slides = {
   subTitle: string;
   id: string;
   label: string;
+}
+export type Product = {
+  id: string,
+  title: string,
+  subTitle: string,
+  category: string,
+  desc: string,
+  image: string,
+  price: string,
+  colorPallet?: [],
+}
+
+export type Basket = {
+  product: Product;
+  count: number;
+};
+
+export type Team = {
+  fullName: string;
+  image: string;
+  job: string;
+  id: string;
 };
