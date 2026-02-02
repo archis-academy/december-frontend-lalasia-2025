@@ -1,9 +1,9 @@
 import ProductCard from "@/components/ProductCard/ProductCard";
-import type { Products } from "@/types/types";
+import type { Product } from "@/types/types";
 import { useData } from "@/hooks/useData";
 
 export default function ProductList() {
-  const { data, isLoading, error } = useData<Products[]>({
+  const { data, isLoading, error } = useData<Product[]>({
     endpoint: "products",
   });
 

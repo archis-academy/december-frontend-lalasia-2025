@@ -1,0 +1,96 @@
+@use "/src/styles/variables" as *;
+
+.teamSection {
+  display: grid;
+  gap: 40px;
+  padding: 10px;
+  .teamSection__header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      display: grid;
+    }
+    .teamSection__header__title {
+      display: grid;
+      gap: 14px;
+      max-width: 548px;
+
+      .teamSection__header__title__text {
+        color: $secondary-color;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 130%;
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+      .teamSection__header__title__h1 {
+        font-size: 44px;
+        line-height: 130%;
+        font-weight: 700;
+        @media (max-width: 768px) {
+          font-size: 24px;
+        }
+      }
+    }
+    .teamSection__header__desc {
+      max-width: 505px;
+      .teamSection__header__desc__p {
+        color: $paragraph-color;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 180%;
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .teamSection__members__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 525px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .teamSection__members__list__member {
+      display: grid;
+      gap: 26px;
+      .teamSection__members__list__img {
+        height: 360px;
+        object-fit: cover;
+        width: 100%;
+        object-position: center;
+      }
+      .teamSection__members__list__info {
+        display: grid;
+        gap: 8px;
+        .teamSection__members__list__name {
+          font-weight: 700;
+          font-size: 26px;
+          line-height: 130%;
+          color: $text-color;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
+        }
+        .teamSection__members__list__job {
+          color: $paragraph-color;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 180%;
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
