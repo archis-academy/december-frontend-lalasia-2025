@@ -1,9 +1,11 @@
+import TeamSection from "@/components/TeamSection/TeamSection";
+
 const AboutUs = () => {
   return (
     <div>
-      About Us
+      <TeamSection />
     </div>
-  )
-}
+  );
+};
 
-export default AboutUs
+export default AboutUs;

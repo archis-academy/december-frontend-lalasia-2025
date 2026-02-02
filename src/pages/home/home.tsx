@@ -1,9 +1,7 @@
-"use client";
-import Hero from "@/components/HomeHeroSection/HomeHeroSection";
 import Benefits from "@/components/welcome/benefitsd";
+import Hero from "@/components/HomeHeroSection/HomeHeroSection";
 import Article from "@/components/Article/Article.tsx";
 import PopularProducts from "@/components/PopularProducts/PopularProducts";
-
 
 function Home() {
 
@@ -16,6 +14,5 @@ function Home() {
 
   </>;
 }
+
 export default Home;
-
-
