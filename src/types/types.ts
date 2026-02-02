@@ -14,24 +14,33 @@ export type ArticleCardProps = {
 export type SortKey = "priceAsc" | "priceDesc" | "titleAsc" | "titleDesc";
 
 export type User = {
-  id: number;
-  fullName: string;
-  email: string;
-  password: string;
-  phoneNumber: string;
-  image: string;
-};
+  id: number,
+  fullName: string,
+  email: string,
+  password: string,
+  phoneNumber: string,
+  image: string
+}
 
-export type Product = {
+export type Products = {
   id: string;
   title: string;
   subTitle: string;
-  category: string;
   desc: string;
   image: string;
-  price: string;
-  colorPallet: [];
+  price: number;
 };
+
+export type Product = {
+  id: string,
+  title: string,
+  subTitle: string,
+  category: string,
+  desc: string,
+  image: string,
+  price: string,
+  colorPallet?: [],
+}
 
 export type Basket = {
   product: Product;

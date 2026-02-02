@@ -14,10 +14,6 @@ export default function Article() {
         setSlideItems(data || []);
     }, [data]);
 
-
-    console.log("data: ", data);
-    console.log("users: ", users);
-
     const handleNext = () => {
 
         setSlideItems((prev) => {
