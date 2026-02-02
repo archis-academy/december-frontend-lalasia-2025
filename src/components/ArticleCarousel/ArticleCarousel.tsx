@@ -63,14 +63,14 @@ const ArticleCarousel = () => {
 
   return (
     <section className={styles.carousel}>
-      <header className={styles.header}>
+      <div className={styles.header}>
         <h2 className={styles.mainTitle}>Article</h2>
         <p className={styles.description}>
           We display products based on the latest products we have,
           if you want to see our old products please enter the name
           of the item
         </p>
-      </header>
+      </div>
 
       <div className={styles.body}>
         <div className={styles.imageContainer}>
