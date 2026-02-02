@@ -15,6 +15,7 @@
   width: calc(33.33% - 20px); 
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease-in-out;
 }
 
 .number {
@@ -38,16 +39,16 @@
   color: #AFADB5;
 }
 
-@media (max-width: 950px) {
-  .card {
-    width: calc(33.33% - 20px); 
-  }
+@media (max-width: 1050px) {
+  .number { font-size: 48px; }
+  .title { font-size: 20px; }
+  .text { font-size: 16px; }
 }
-@media(max-width: 850px){
-  .card{
-    width:calc(33.33% - 20px); 
-  }
 
+@media (max-width: 900px) {
+  .card {
+    width: calc(50% - 20px); 
+  }
   .number { font-size: 32px; }
   .title { font-size: 14px; }
   .text { font-size: 12px; }
