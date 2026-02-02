@@ -1,9 +1,12 @@
+import MissionSection from "@/components/MissionSection/MissionSection";
+
 const AboutUs = () => {
   return (
     <div>
-      About Us
+  
+      <MissionSection />
+   
     </div>
   )
 }
-
 export default AboutUs
