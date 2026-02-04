@@ -1,0 +1,106 @@
+
+@use "/src/styles/variables" as *;
+
+.about-section {
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Inter', sans-serif; // Tasarıma uygun font
+
+  .about-header {
+    margin-bottom: 50px;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+    }
+
+    p {
+      color: #777;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .video-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+    .main-video {
+      width: 100%;
+      display: block;
+      cursor: pointer;
+    }
+
+    .play-overlay-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.8);
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      .play-icon {
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 25px solid white;
+        margin-left: 5px;
+      }
+    }
+
+    .video-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .time {
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .progress-bar-container {
+        flex: 1;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+        position: relative;
+
+        .progress-fill {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background: white;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}

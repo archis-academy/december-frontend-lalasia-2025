@@ -32,7 +32,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="services" element={<Services />} />
           <Route path="articles" element={<Article />} />
           <Route path="articles/:id" element={<ArticleDetail />} />
-          <Route path="about-us" element={<AboutUs />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           
 
         </Route>
