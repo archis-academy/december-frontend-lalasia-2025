@@ -11,7 +11,9 @@ export type ArticleCardProps = {
   handleNext: () => void;
   handlePrev: () => void;
 };
+
 export type SortKey = "priceAsc" | "priceDesc" | "titleAsc" | "titleDesc";
+
 
 export type User = {
   id: number,
@@ -22,6 +24,7 @@ export type User = {
   image: string
 }
 
+
 export type Products = {
   id: string;
   title: string;
@@ -30,7 +33,13 @@ export type Products = {
   image: string;
   price: number;
 };
-
+export type Slides = {
+  title: string;
+  image: string;
+  subTitle: string;
+  id: string;
+  label: string;
+}
 export type Product = {
   id: string,
   title: string,
