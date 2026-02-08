@@ -16,34 +16,26 @@ import MainLayout from "./layouts/MainLayout/MainLayout";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
 import AuthLayout from "./layouts/AuthLayout/AuthLayout";
 
-
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-
         {/* MainLayout begin */}
         <Route path="/" element={<MainLayout />}>
-
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="services" element={<Services />} />
           <Route path="articles" element={<ArticlePage />} />
-          <Route path="articles/:id" element={<ArticleDetail />} />
+          <Route path="articles/article-detail" element={<ArticleDetail />} />
           <Route path="about-us" element={<AboutUs />} />
-          
-
         </Route>
         {/* MainLayout end */}
 
         {/* AuthLayout begin */}
         <Route path="/auth" element={<AuthLayout />}>
-
           <Route index path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
-
         </Route>
         {/* Authlayout end */}
 
