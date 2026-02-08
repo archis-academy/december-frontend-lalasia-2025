@@ -1,10 +1,11 @@
+import Article from "@/components/Article/Article"
 
-const Article = () => {
+const ArticlePage = () => {
   return (
     <div>
-      Article
+      <Article />
     </div>
   )
 }
 
-export default Article
+export default ArticlePage
