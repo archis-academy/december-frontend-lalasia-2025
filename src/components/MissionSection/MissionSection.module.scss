@@ -97,12 +97,25 @@
   }
 }
 
-
 @media (max-width: 1024px) {
   .missionSection .container {
-    grid-template-columns: 1fr; 
-    gap: 60px;
+    grid-template-columns: 1fr;
+    gap: 48px; // 1024'te dikey boşluğu biraz daha kontrollü yapalım
   }
+
+  .leftContent {
+    .mainTitle { 
+      max-width: 100%; 
+      font-size: 38px; 
+    }
+    
+    .statsGrid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+
   .rightContent {
     width: 100%;
   }
@@ -110,13 +123,40 @@
 
 @media (max-width: 768px) {
   .leftContent {
-    .mainTitle { font-size: 32px; }
-    .statsGrid { 
-      justify-content: space-between;
-      gap: 20px;
+    .mainTitle { 
+      font-size: 32px; 
+      margin-bottom: 40px;
+    }
+
+    .statsGrid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 24px;
+    }
+    
+    .statBox {
+      .statValue { font-size: 32px; }
+      .statLabel { font-size: 13px; }
     }
   }
+
   .rightContent {
-    width: 100%;
+    .featureCard {
+      gap: 16px; 
+      
+      .featureText p {
+        font-size: 14px; 
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .leftContent .statsGrid {
+    justify-content: space-between;
+    gap: 10px; 
+  }
+  
+  .statBox .statValue {
+    font-size: 28px; 
   }
 }
