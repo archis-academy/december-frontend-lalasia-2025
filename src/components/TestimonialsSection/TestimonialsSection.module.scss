@@ -174,28 +174,89 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .missionSection .container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .leftContent {
+    .mainTitle {
+      max-width: 100%; 
+      font-size: 38px;
+    }
+
+    .statsGrid {
+      display: flex;
+      justify-content: flex-start;
+      gap: 60px; 
+    }
+  }
+
+  .rightContent {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
+  .leftContent {
+    .mainTitle {
+      font-size: 32px;
+    }
+    .statsGrid {
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap; 
+    }
+  }
+
+  .rightContent {
+    width: 100%;
+    
+    
+    .featureCard {
+      &:hover {
+        transform: none !important;
+        background: inherit !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+
+ 
   .testimonialsSection {
     padding: 60px 0;
     .header {
       margin-bottom: 40px;
-      .heading { font-size: 28px; }
+      .heading {
+        font-size: 28px;
+      }
     }
   }
 
   .swiperContainer {
-    padding: 0 0 50px !important; 
+    padding: 0 0 50px !important;
     :global {
       .swiper-slide {
         width: 85% !important;
         opacity: 1;
-        transform: scale(1);
+       
       }
-      .swiper-button-next, .swiper-button-prev { display: none; }
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
     }
   }
 
   .card {
     padding: 25px;
+  
+    &:hover {
+      transform: none !important;
+      box-shadow: none !important;
+      background-color: inherit !important;
+      transition: none !important; 
+    }
   }
-  }
+}
