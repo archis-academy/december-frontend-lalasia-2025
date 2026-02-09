@@ -1,7 +1,18 @@
 @import "../../styles/variables.scss";
 
+.wrapper {
+  width: 100%;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 64px 24px;
+}
+
 .TrendingTopicsTitle {
-  color: $secondary-color; // turuncu ton (Trending Topics yazısı)
+  color: $secondary-color;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
@@ -84,4 +95,29 @@
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
+}
+
+.articleText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 700px;
+}
+
+.articleTitle {
+  font-weight: 700;
+  font-size: 18px;
+  color: #000;
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+  margin: 0;
+}
+
+.articleContext {
+  white-space: pre-line;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+  margin: 0;
 }
