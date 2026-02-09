@@ -49,7 +49,6 @@ createRoot(document.getElementById("root")!).render(
 
         {/* 404 Not Found */}
         <Route path="/*" element={<Error />} />
-
       </Routes>
     </BrowserRouter>
   </StrictMode>,

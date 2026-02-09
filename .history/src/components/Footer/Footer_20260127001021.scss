@@ -1,0 +1,69 @@
+$primary-green: #518581;
+$text-dark: #151411;
+$text-gray: #afadb5;
+
+.footer-container {
+  padding: 80px 10%;
+  
+  .cta-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .cta-button {
+      background-color: $primary-green;
+      color: white;
+      border: none;
+      padding: 18px 36px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      outline: none;
+
+      .arrow {
+        margin-left: 12px;
+        transition: transform 0.2s ease;
+      }
+
+      // Hover Durumu (Üzerine gelince)
+      &:hover {
+        background-color: darken($primary-green, 8%);
+        box-shadow: 0 4px 15px rgba(81, 133, 129, 0.3);
+        
+        .arrow {
+          transform: translateX(5px); // Ok sağa kaysın
+        }
+      }
+
+      // Active Durumu (Tıklandığı an)
+      &:active {
+        transform: scale(0.96); // Hafif içe çökme efekti
+      }
+    }
+  }
+
+  .footer-content {
+    .links-section {
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li a {
+          text-decoration: none;
+          color: $text-gray;
+          transition: color 0.2s;
+          display: inline-block;
+          padding: 4px 0;
+
+          &:hover {
+            color: $primary-green;
+          }
+        }
+      }
+    }
+  }
+}
