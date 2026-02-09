@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./TestimonialCard.module.scss";
-import { QuoteUp } from 'iconsax-react';
+import { QuoteUp } from  'iconsax-reactjs';
 import { useData } from '@/hooks/useData';
 
 const TestimonialCard: React.FC<{ customer: any }> = ({ customer }) => {
