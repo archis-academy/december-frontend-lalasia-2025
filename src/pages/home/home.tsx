@@ -1,15 +1,22 @@
 
-import React from "react";
+import Benefits from "@/components/welcome/benefitsd";
+import Hero from "@/components/HomeHeroSection/HomeHeroSection";
+import PopularProducts from "@/components/PopularProducts/PopularProducts";
 import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
+import Article from "@/components/Article/Article.tsx";
 
-const Home: React.FC = () => {
+
+function Home() {
+
   return (
-    <div>
-      <TestimonialsSection />
-    </div>
+    <>
+    <Hero />
+    <Benefits />
+    <PopularProducts />
+    <TestimonialsSection />
+    <Article />
+  </>
   );
-};
+}
 
 export default Home;
-
-
