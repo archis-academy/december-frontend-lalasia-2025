@@ -27,7 +27,8 @@ createRoot(document.getElementById("root")!).render(
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="services" element={<Services />} />
           <Route path="articles" element={<ArticlePage />} />
-          <Route path="articles/article-detail" element={<ArticleDetail />} />
+          <Route path="articles/:id" element={<ArticleDetail />} />
+          <Route path="/*" element={<Error />} />
           <Route path="about-us" element={<AboutUs />} />
         </Route>
         {/* MainLayout end */}
@@ -38,9 +39,6 @@ createRoot(document.getElementById("root")!).render(
           <Route path="signup" element={<SignUp />} />
         </Route>
         {/* Authlayout end */}
-
-        {/* 404 Not Found */}
-        <Route path="/*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
