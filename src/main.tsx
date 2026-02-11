@@ -16,16 +16,12 @@ import MainLayout from "./layouts/MainLayout/MainLayout";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
 import AuthLayout from "./layouts/AuthLayout/AuthLayout";
 
-
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-
         {/* MainLayout begin */}
         <Route path="/" element={<MainLayout />}>
-
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
@@ -33,22 +29,16 @@ createRoot(document.getElementById("root")!).render(
           <Route path="articles" element={<Article />} />
           <Route path="articles/:id" element={<ArticleDetail />} />
           <Route path="about-us" element={<AboutUs />} />
-          
-
+          <Route path="/*" element={<Error />} />
         </Route>
         {/* MainLayout end */}
 
         {/* AuthLayout begin */}
         <Route path="/auth" element={<AuthLayout />}>
-
           <Route index path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
-
         </Route>
         {/* Authlayout end */}
-
-        {/* 404 Not Found */}
-        <Route path="/*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
