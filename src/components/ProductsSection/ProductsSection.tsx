@@ -56,6 +56,7 @@ export default function ProductsSection() {
     page * itemsPerPage,
     (page + 1) * itemsPerPage,
   );
+  
   const sortLabel: Record<SortKey, string> = {
     priceAsc: "Price: Low → High",
     priceDesc: "Price: High → Low",

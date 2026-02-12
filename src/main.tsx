@@ -5,7 +5,7 @@ import Home from "@pages/home/home";
 import "./styles/_reset.scss";
 import "@src/main.scss";
 import AboutUs from "./pages/AboutUs/AboutUs";
-import Article from "./pages/Article/Article";
+import ArticlePage from "./pages/Article/Article";
 import Error from "./pages/Error/Error";
 import Login from "./pages/Login/Login";
 import Products from "./pages/Product/Products";
@@ -26,10 +26,10 @@ createRoot(document.getElementById("root")!).render(
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="services" element={<Services />} />
-          <Route path="articles" element={<Article />} />
+          <Route path="articles" element={<ArticlePage />} />
           <Route path="articles/:id" element={<ArticleDetail />} />
-          <Route path="about-us" element={<AboutUs />} />
           <Route path="/*" element={<Error />} />
+          <Route path="about-us" element={<AboutUs />} />
         </Route>
         {/* MainLayout end */}
 
