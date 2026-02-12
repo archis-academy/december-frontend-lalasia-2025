@@ -141,11 +141,14 @@ const TrendingTopicsSection = () => {
                 className={style.articleImage}
               />
               <div className={style.articleText}>
+                <span className={style.articleCategory}>
+                  {article.category}
+                </span>
                 <h4 className={style.articleTitle}>
                   {article.title}
                 </h4>
                 <p className={style.articleContext}>
-                  {article.context}
+                  {article.context.slice(0, 400)}...
                 </p>
               </div>
             </div>
