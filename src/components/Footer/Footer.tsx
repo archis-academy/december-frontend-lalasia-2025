@@ -1,48 +1,66 @@
-import React from 'react';
-import './Footer.scss';
+import {
+  useLocation,
+  useMatch,
+  useParams,
+  useResolvedPath,
+} from "react-router";
+import "./Footer.scss";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const handleNavigation = () => {
-    window.open('https://www.google.com', '_blank');
+    window.open("https://www.google.com", "_blank");
   };
+
+  const params = useLocation();
+  console.log("params: ", params);
+
+  const productDetailStatWith = params.pathname.startsWith("/products/");
+  console.log("productDetailStatWith: ", productDetailStatWith);
+
+  let subscribe = true;
+
+  if (params.pathname === "/products") {
+    subscribe = false;
+  } else if (productDetailStatWith === true) {
+    subscribe = false;
+  } else if (params.pathname === "/*") {
+    subscribe = false;
+  }
 
   return (
     <footer className="footer-wrapper">
       <div className="footer-container">
-        
-      
-        <div className="footer-cta">
-          <h2 className="cta-text">Join with me to get special discount</h2>
-          <button 
-            className="cta-btn" 
-            onClick={handleNavigation} 
-            type="button"
-          >
-            Learn More <span className="arrow">→</span>
-          </button>
-        </div>
+        {subscribe && (
+          <div className="footer-cta">
+            <h2 className="cta-text">Join with me to get special discount</h2>
+            <button
+              className="cta-btn"
+              onClick={handleNavigation}
+              type="button"
+            >
+              Learn More <span className="arrow">→</span>
+            </button>
+          </div>
+        )}
 
         <hr className="footer-line" />
 
-        
         <div className="footer-main">
-          
-        
           <div className="footer-brand">
             <div className="brand-logo">
-              <img 
-                src="/icons/Frame.svg" 
-                alt="Lalasia Logo" 
-                className="logo-img" 
+              <img
+                src="/icons/Frame.svg"
+                alt="Lalasia Logo"
+                className="logo-img"
               />
               <span className="logo-text">Lalasia</span>
             </div>
             <p className="brand-desc">
-              Lalasia is digital agency that help you make better experience iaculis cras in.
+              Lalasia is digital agency that help you make better experience
+              iaculis cras in.
             </p>
           </div>
 
-       
           <div className="footer-links-group">
             <div className="link-col">
               <h4>Product</h4>
@@ -66,7 +84,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
       </div>
     </footer>
   );
