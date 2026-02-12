@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import type { ArticleCardProps } from "@/types/types";
 import { useData } from "@/hooks/useData";
 import style from "./TrendingTopics.module.scss";
@@ -10,24 +10,51 @@ const TrendingTopicsSection = () => {
 
   const [activeTab, setActiveTab] = useState("All");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Dışarı tıklayınca dropdown kapanması
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const categories = useMemo(() => {
     if (!data) return [];
-    const uniqueCategories = Array.from(new Set(data.map((item) => item.category)));
+    const uniqueCategories = Array.from(
+      new Set(data.map((item) => item.category))
+    );
     return ["All", ...uniqueCategories];
   }, [data]);
 
   const filteredSortedData = useMemo(() => {
     if (!data) return [];
 
-    // Önce filtrele
-    let filtered = data.filter(article => activeTab === "All" ? true : article.category === activeTab);
+    let filtered =
+      activeTab === "All"
+        ? data
+        : data.filter((article) => article.category === activeTab);
 
-    // Sonra sıralama uygula
     if (sortOrder === "asc") {
-      filtered = [...filtered].sort((a, b) => a.title.localeCompare(b.title));
+      filtered = [...filtered].sort((a, b) =>
+        a.title.localeCompare(b.title)
+      );
     } else if (sortOrder === "desc") {
-      filtered = [...filtered].sort((a, b) => b.title.localeCompare(a.title));
+      filtered = [...filtered].sort((a, b) =>
+        b.title.localeCompare(a.title)
+      );
     }
 
     return filtered;
@@ -43,32 +70,83 @@ const TrendingTopicsSection = () => {
         <h3 className={style.PopularLastWeek}>Popular last week</h3>
 
         <div className={style.buttonContainer}>
-          {categories.map(category => (
+          {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveTab(category)}
-              className={`${style.button} ${activeTab === category ? style.activeTab : style.inactiveTab}`}
+              className={`${style.button} ${
+                activeTab === category
+                  ? style.activeTab
+                  : style.inactiveTab
+              }`}
             >
               {category}
             </button>
           ))}
 
-          {/* Sıralama butonu */}
-          <button
-            className={style.exploreButton}
-            onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-          >
-            {sortOrder === "asc" ? "Sort: A-Z" : sortOrder === "desc" ? "Sort: Z-A" : "Filter"}
-          </button>
+          {/* SORT DROPDOWN */}
+          <div className={style.sortWrapper} ref={dropdownRef}>
+            <button
+              className={style.exploreButton}
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              <img
+                src="/icons/trendingTopics/filter-icon.svg"
+                alt="filter"
+                className={style.filterIcon}
+              />
+              {sortOrder === "asc"
+                ? "A-Z"
+                : sortOrder === "desc"
+                ? "Z-A"
+                : "Filter"}
+            </button>
+
+            {isOpen && (
+              <div className={style.dropdown}>
+                <button
+                  onClick={() => {
+                    setSortOrder("asc");
+                    setIsOpen(false);
+                  }}
+                  className={
+                    sortOrder === "asc" ? style.activeOption : ""
+                  }
+                >
+                  A-Z
+                </button>
+
+                <button
+                  onClick={() => {
+                    setSortOrder("desc");
+                    setIsOpen(false);
+                  }}
+                  className={
+                    sortOrder === "desc" ? style.activeOption : ""
+                  }
+                >
+                  Z-A
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className={style.articlesContainer}>
-          {filteredSortedData.map(article => (
+          {filteredSortedData.map((article) => (
             <div key={article.id} className={style.articleCard}>
-              <img src={article.image} alt={article.title} className={style.articleImage} />
+              <img
+                src={article.image}
+                alt={article.title}
+                className={style.articleImage}
+              />
               <div className={style.articleText}>
-                <h4 className={style.articleTitle}>{article.title}</h4>
-                <p className={style.articleContext}>{article.context}</p>
+                <h4 className={style.articleTitle}>
+                  {article.title}
+                </h4>
+                <p className={style.articleContext}>
+                  {article.context}
+                </p>
               </div>
             </div>
           ))}
