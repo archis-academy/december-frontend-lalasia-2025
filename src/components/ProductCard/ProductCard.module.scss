@@ -6,8 +6,11 @@
   flex-direction: column;
   gap: 26px;
   font-family: $font-primary;
-  max-width: 394px;
+  width: 394px;
   margin-inline: auto;
+  @media (max-width: 428px){
+    width: 300px;
+  }
 
   .imageContainer {
     width: 100%;

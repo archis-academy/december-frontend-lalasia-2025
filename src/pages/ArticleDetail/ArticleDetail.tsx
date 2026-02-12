@@ -1,8 +1,11 @@
-import { useParams } from "react-router"
+import IndivualArticles from "../../components/IndiviualArticles/IndiviualArticles"
+
 
 export default function ArticleDetail() {
-    const { id } = useParams<{ id: string }>();
     return (
-        <div>ArticleDetail: {id}</div>
+        <div>
+        <IndivualArticles />
+            
+        </div>
     )
 }

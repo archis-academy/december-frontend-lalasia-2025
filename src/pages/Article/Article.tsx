@@ -1,10 +1,11 @@
 import ArticleCarousel from "@/components/ArticleCarousel/ArticleCarousel";
 
-const Article = () => {
+const ArticlePage = () => {
   return (
     <div>
       <ArticleCarousel />
     </div>
   )
 }
-export default Article;
+
+export default ArticlePage
