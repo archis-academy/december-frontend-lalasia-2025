@@ -1,9 +1,9 @@
-import Article from "@/components/Article/Article"
+import ArticleCarousel from "@/components/ArticleCarousel/ArticleCarousel";
 
 const ArticlePage = () => {
   return (
     <div>
-      <Article />
+      <ArticleCarousel />
     </div>
   )
 }
