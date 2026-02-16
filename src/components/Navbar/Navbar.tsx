@@ -2,6 +2,8 @@ import React from 'react'
 import styles from './Navbar.module.scss';
 import { useState } from "react";
 import { useLocation } from "react-router";
+import { Link } from 'react-router-dom';
+
 
 const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,10 +21,10 @@ const Navbar: React.FC = () => {
                 </div>
             </div>
             <div className={`${styles.linkArea} ${isMenuOpen ? styles.open : ""}`}>
-      <a href="/products" className={isActive("/products") ? styles.active : ""}>Product</a>
-      <a href="/services" className={isActive("/services") ? styles.active : ""}>Services</a>
-      <a href="/articles" className={isActive("/articles") ? styles.active : ""}>Article</a>
-      <a href="/about-us" className={isActive("/about-us") ? styles.active : ""}>About Us</a>
+      <Link to="/products" className={isActive("/products") ? styles.active : ""}>Product</Link>
+      <Link to="/services" className={isActive("/services") ? styles.active : ""}>Services</Link>
+      <Link to="/articles" className={isActive("/articles") ? styles.active : ""}>Article</Link>
+      <Link to="/about-us" className={isActive("/about-us") ? styles.active : ""}>About Us</Link>
            </div>
            <div className={styles.icon}>
        
