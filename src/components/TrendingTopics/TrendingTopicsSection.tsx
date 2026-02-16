@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import  { useState, useMemo, useRef, useEffect } from "react";
 import type { ArticleCardProps } from "@/types/types";
 import { useData } from "@/hooks/useData";
 import style from "./TrendingTopics.module.scss";
@@ -150,6 +150,15 @@ const TrendingTopicsSection = () => {
                 <p className={style.articleContext}>
                   {article.context.slice(0, 400)}...
                 </p>
+                <div className={style.articleMeta}>
+                  <img
+                src="/icons/trendingTopics/article-icon-user.svg"
+                alt="User Image"
+                className={style.articleIconUser}
+              />
+                <span className={style.authorName}>By Morgan Goldberg</span> 
+                <span className={style.publishDate}>Friday, 1 April 2022</span>
+                </div>
               </div>
             </div>
           ))}

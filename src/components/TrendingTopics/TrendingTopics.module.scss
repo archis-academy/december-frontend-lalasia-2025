@@ -177,3 +177,23 @@
   line-height: 1.6;
   margin: 0;
 }
+.articleMeta {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.articleIconUser {
+  width: 28px;
+  height: 28px;
+}
+.authorName {
+  font-size: 14px;
+  font-weight: $fw-bold;
+  font-family: $font-primary;
+}
+.publishDate {
+  font-size: 14px;
+  color: $paragraph-color;
+  font-family: $font-primary;
+  font-weight: $fw-medium;
+}
