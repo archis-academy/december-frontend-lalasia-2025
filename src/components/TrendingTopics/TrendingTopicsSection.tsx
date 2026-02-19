@@ -148,7 +148,7 @@ const TrendingTopicsSection = () => {
                   {article.title}
                 </h4>
                 <p className={style.articleContext}>
-                  {article.context.slice(0, 400)}...
+                  {article.context.slice(0, 150)}...
                 </p>
                 <div className={style.articleMeta}>
                   <img
