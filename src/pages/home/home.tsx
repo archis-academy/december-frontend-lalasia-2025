@@ -1,27 +1,22 @@
 
 import Benefits from "@/components/welcome/benefitsd";
-
-"use client";
-
-import { useData } from "@/hooks/useData";
-
-import Welcome from "@components/welcome/welcome";
-import { use } from "react";
+import Hero from "@/components/HomeHeroSection/HomeHeroSection";
+import PopularProducts from "@/components/PopularProducts/PopularProducts";
+import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 import Article from "@/components/Article/Article.tsx";
 
 
 function Home() {
 
-  return <div>Home page
-  
-
-
- 
+  return (
+    <>
+    <Hero />
+    <Benefits />
+    <PopularProducts />
+    <TestimonialsSection />
     <Article />
- <Benefits/>
-
-  </div>;
+  </>
+  );
 }
+
 export default Home;
-
-
