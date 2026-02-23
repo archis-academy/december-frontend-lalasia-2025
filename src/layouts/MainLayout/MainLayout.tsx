@@ -6,6 +6,7 @@ export default function MainLayout() {
     return (
         <div className={styles.mainlayout}>
             <Navbar/>
+            <header>Header</header>
             <main><Outlet /></main>
             <footer>Footer</footer>
         </div>
