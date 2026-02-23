@@ -1,4 +1,6 @@
 import style from "./IndiviualArticles.module.scss";
+
+
 const IndiviualArticles = () => {
   return (
     <div className={style.indiviualarticles}>
