@@ -6,8 +6,9 @@ import Footer from "@/components/Footer/Footer";
 export default function MainLayout() {
   return (
     <div className={styles.mainlayout}>
-      <Navbar />
-      <header>Header</header>
+      <header>
+        <Navbar />
+      </header>
       <main>
         <Outlet />
       </main>
