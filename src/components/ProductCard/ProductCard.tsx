@@ -1,8 +1,5 @@
 import style from "./ProductCard.module.scss";
-
 import type { Product } from "@/types/types";
-
-type ProductCardProps = Product;
 
 const ProductCard = ({
   image,
@@ -10,13 +7,14 @@ const ProductCard = ({
   title,
   subTitle,
   price,
-}: ProductCardProps) => (
+  category
+}: Product) => (
   <div className={style.productCard}>
     <div className={style.imageContainer}>
       <img src={image} alt={title} />
     </div>
     <div className={style.productInfo}>
-      <h5>{subTitle}</h5>
+      <h5>{category}</h5>
       <div className={style.content}>
         <div className={style.productDetails}>
           <h3>{title}</h3>
