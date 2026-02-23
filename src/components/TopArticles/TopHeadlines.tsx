@@ -1,21 +1,21 @@
 import React from "react";
-import "./TopArticles.scss";
-import ArticleCard from "../ArticleCard/ArticleCard";
+import "./TopHeadlines.scss";
+import ArticleCard from "../Article/ArticleCard";
+import { useData } from "@/hooks/useData";
 
 export interface Article {
-  id: number;
+  id: string;
   title: string;
-  description: string;
+  subtitle: string;
+  context: string;
   image: string;
-  author: string;
+  authorId: number;
   category: string;
 }
-  
-interface TopArticlesProps {
-  articles: Article[];
-}
 
-const TopArticles: React.FC<TopArticlesProps> = ({ articles }) => {
+const TopArticles = () => {
+  const { data: articles } = useData<Article[]>({ endpoint: "articles" });
+
   return (
     <section className="top-articles">
       <div className="top-articles__container">
@@ -25,9 +25,19 @@ const TopArticles: React.FC<TopArticlesProps> = ({ articles }) => {
         </div>
 
         <div className="top-articles__grid">
-          {articles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
+          {articles &&
+            articles
+              .slice(0, 4)
+              .map((article: Article) => (
+                <ArticleCard
+                  key={article.id}
+                  image={article.image}
+                  title={article.title}
+                  context={article.context}
+                  category={article.category}
+                  autherId={article.authorId}
+                />
+              ))}
         </div>
       </div>
     </section>
