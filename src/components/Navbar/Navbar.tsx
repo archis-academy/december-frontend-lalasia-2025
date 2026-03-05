@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Navbar.module.scss";
 import { useState } from "react";
-import { useLocation } from "react-route";
-import { Link } from "react-router-do";
+import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
