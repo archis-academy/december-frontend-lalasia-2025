@@ -1,10 +1,13 @@
+import ArticleCarousel from "@/components/ArticleCarousel/ArticleCarousel";
+import TrendingTopicsSection from "@/components/TrendingTopics/TrendingTopicsSection";
 
-const Article = () => {
+const ArticlePage = () => {
   return (
     <div>
-      Article
+      <ArticleCarousel />
+      <TrendingTopicsSection />
     </div>
-  )
+  );
 }
 
-export default Article
+export default ArticlePage

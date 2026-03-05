@@ -1,13 +1,21 @@
-"use client";
-
+import Benefits from "@/components/welcome/benefitsd";
+import Hero from "@/components/HomeHeroSection/HomeHeroSection";
+import PopularProducts from "@/components/PopularProducts/PopularProducts";
+import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
+import Article from "@/components/Article/Article.tsx";
 import OurProduct from "@/components/OurProduct/OurProduct";
-import ProductList from "@/components/ProductList/ProductList";
 
 function Home() {
-
-  return <div>
-    <OurProduct/>
-  </div>;
+  return (
+    <>
+      <Hero />
+      <Benefits />
+      <PopularProducts />
+      <OurProduct />
+      <TestimonialsSection />
+      <Article />
+    </>
+  );
 }
 
 export default Home;
