@@ -5,7 +5,7 @@ import { useState, useMemo } from "react";
 interface Product {
   id: number;
   title: string;
-  description: string;
+  desc: string; // API field’ına göre "desc"
   category: string;
   price: number;
   image: string;
@@ -62,7 +62,7 @@ const TotalProduct = () => {
 
       {/* Products Grid */}
       <div className="products-grid">
-        {currentProducts.map((product: Product, index: number) => (
+        {currentProducts.map((product, index) => (
           <div className="product-card" key={product.id ?? index}>
             <div className="image">
               <img src={product.image} alt={product.title} />
@@ -70,7 +70,7 @@ const TotalProduct = () => {
             <div className="info">
               <span className="category">{product.category}</span>
               <h3 className="title">{product.title}</h3>
-              <p className="desc">{product.description}</p>
+              <p className="desc">{product.desc}</p> {/* artık doğru field */}
               <span className="price">${product.price}</span>
             </div>
           </div>

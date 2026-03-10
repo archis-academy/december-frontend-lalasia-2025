@@ -54,37 +54,35 @@
       object-fit: cover;
       display: block;
     }
-
+    .info {
+      margin-top: 12px;
+    }
     .category {
-      font-size: 12px;
-      color: gray;
-      text-transform: uppercase;
+      color: $paragraph-color;
+      font-family: $font-primary;
+      font-weight: $fw-bold;
+      font-size: 18px;
     }
 
     .title {
-      font-size: 18px;
-      margin: 5px 0;
-      font-weight: 500;
+      font-family: $font-primary;
+      font-weight: $fw-bold;
+      color: $text-color;
+      font-size: 26px;
     }
 
     .desc {
-      font-size: 14px;
-      color: #777;
-      line-height: 1.4;
-      margin-bottom: 10px;
-
-      display: -webkit-box;
-
+      font-family: $font-primary;
+      font-weight: $fw-medium;
+      color: $paragraph-color;
       overflow: hidden;
       text-overflow: ellipsis;
-      transition: color 0.2s;
     }
     .price {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 16px;
-      color: #333;
+      font-family: $font-primary;
+      font-weight: $fw-bold;
+      font-size: 24px;
+      margin-top: 20px;
     }
   }
 
@@ -96,20 +94,14 @@
 
     button {
       padding: 6px 12px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      background: white;
+      border: none;
+      background: $white;
       cursor: pointer;
       transition: 0.2s;
 
-      &:hover {
-        background: #f0f0f0;
-      }
-
       &.active {
-        background: #333;
-        color: white;
-        border-color: #333;
+        background: $main-color;
+        color: $white;
       }
     }
 
@@ -117,7 +109,6 @@
       display: flex;
       align-items: center;
       font-size: 16px;
-      color: gray;
     }
   }
 
